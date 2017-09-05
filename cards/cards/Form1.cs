@@ -72,12 +72,9 @@ namespace cards
             new Layout { CardSuit = "Spades", CardValue = "J", a = 720, b = 300, c = 72, d = 100 },
             new Layout { CardSuit = "Spades", CardValue = "Q", a = 792, b = 300, c = 72, d = 100 },
             new Layout { CardSuit = "Spades", CardValue = "K", a = 864, b = 300, c = 72, d = 100 });
-
-            Layout match = new Layout();
             // создать новую колоду
             Deck deck = new Deck();
             deck.CreateDeck();
-
             Card[][] hands = new Card[4][];
             for (byte i = 0; i < 4; i++)
             {
@@ -88,7 +85,6 @@ namespace cards
                 }
                 hands[i] = hand;
             }
-
             // отобразить результат
             int height = 0;
             for (byte i = 0; i < 4; i++)
@@ -100,12 +96,13 @@ namespace cards
                     CardSuit suit = cards[j].suit;
                     CardValue value = cards[j].value;
                     // найти соответствие
-                    match = cut.Find((Layout c) => { return c.CardSuit == suit.ToString() && c.CardValue == value.ToString(); });
+                    Layout match = cut.Find((Layout c) => { return c.CardSuit == suit.ToString() && c.CardValue == value.ToString(); });
 
-                    Rectangle rect = new Rectangle(match.a, match.b, match.c, match.d); // загрузить разметку
-                    Image image = Image.FromFile("deck.gif");                           // загрузить изображение
-                    Graphics g = this.CreateGraphics();                                 // объект Graphics для формы
-                    g.DrawImage(image, width + 10, height + 10, rect, GraphicsUnit.Pixel);        // расположение в окне
+                    Rectangle rect = new Rectangle(match.a, match.b, match.c, match.d);    // загрузить разметку
+                    //Image image = Image.FromFile("deck.gif");                            // загрузить изображение
+                    Image image = Properties.Resources.deck;
+                    Graphics g = this.CreateGraphics();                                    // объект Graphics для формы
+                    g.DrawImage(image, width + 10, height + 10, rect, GraphicsUnit.Pixel); // расположение в окне
                     width += 72;
 
                     image.Dispose();

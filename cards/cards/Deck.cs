@@ -29,13 +29,13 @@ namespace cards
         {
             CardSuit suit = (CardSuit)gen.Next(4);     // выбрать масть
             while (check(suit))
-            {                      // проверить на непустое
+            {                                          // проверить на непустое
                 suit = (CardSuit)gen.Next(4);          // иначе повторить выбор
                 continue;
             }
             CardValue value = (CardValue)gen.Next(13); // выбрать карту
             while (check(suit, value))
-            {               // проверить на непустое
+            {                                          // проверить на непустое
                 value = (CardValue)gen.Next(13);       // иначе повторить выбор
                 continue;
             }

@@ -10,8 +10,7 @@ namespace cards
     {
         private T match;
         private T[] arr { get; set; }
-        public Profiles(params T[] p)
-        {
+        public Profiles(params T[] p) {
             this.arr = new T[p.Length];
 
             for (int i = 0; i < p.Length; i++)
