@@ -1,0 +1,8 @@
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\cards\cards\bin\Debug\cards.exe.config
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\cards\cards\bin\Debug\cards.exe
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\cards\cards\bin\Debug\cards.pdb
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\cards\cards\obj\Debug\cards.Form.resources
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\cards\cards\obj\Debug\cards.Properties.Resources.resources
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\cards\cards\obj\Debug\cards.csproj.GenerateResource.Cache
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\cards\cards\obj\Debug\cards.exe
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\cards\cards\obj\Debug\cards.pdb
