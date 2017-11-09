@@ -1,0 +1,8 @@
+C:\Users\Alexander\Documents\GitHub\Algorithms\Parallelization Tasks\Parallelization Tasks\bin\Release\Parallelization Tasks.exe.config
+C:\Users\Alexander\Documents\GitHub\Algorithms\Parallelization Tasks\Parallelization Tasks\obj\Release\Parallelization_Tasks.Form.resources
+C:\Users\Alexander\Documents\GitHub\Algorithms\Parallelization Tasks\Parallelization Tasks\obj\Release\Parallelization_Tasks.Properties.Resources.resources
+C:\Users\Alexander\Documents\GitHub\Algorithms\Parallelization Tasks\Parallelization Tasks\obj\Release\Parallelization Tasks.csproj.GenerateResource.Cache
+C:\Users\Alexander\Documents\GitHub\Algorithms\Parallelization Tasks\Parallelization Tasks\bin\Release\Parallelization Tasks.exe
+C:\Users\Alexander\Documents\GitHub\Algorithms\Parallelization Tasks\Parallelization Tasks\bin\Release\Parallelization Tasks.pdb
+C:\Users\Alexander\Documents\GitHub\Algorithms\Parallelization Tasks\Parallelization Tasks\obj\Release\Parallelization Tasks.exe
+C:\Users\Alexander\Documents\GitHub\Algorithms\Parallelization Tasks\Parallelization Tasks\obj\Release\Parallelization Tasks.pdb
