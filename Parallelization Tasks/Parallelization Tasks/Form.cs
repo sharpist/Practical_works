@@ -153,10 +153,7 @@ namespace Parallelization_Tasks
             {
                 try
                 {
-                    using (Image image = pictureBox.Image)
-                    {
-                        image.Save("newImage.png", ImageFormat.Png);
-                    }
+                    //ToDO
                 }
                 catch (Exception ex) { labelInfo.Text = ex.Message; }
 
