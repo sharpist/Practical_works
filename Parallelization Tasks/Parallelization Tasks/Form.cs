@@ -91,8 +91,6 @@ namespace Parallelization_Tasks
                         // разблокировка растрового изображения из системной памяти
                         bmpRGB.UnlockBits(bmpData);
 
-
-
                     // вывести графику в pictureBox
                     var memoryStream = new MemoryStream();
                     bmpRGB.Save(memoryStream, ImageFormat.Bmp);
@@ -153,8 +151,14 @@ namespace Parallelization_Tasks
         {
             if (pictureBox.Image != null)
             {
-                Image image = pictureBox.Image;
-                image.Save("newImage.png", ImageFormat.Png);
+                try
+                {
+                    using (Image image = pictureBox.Image)
+                    {
+                        image.Save("newImage.png", ImageFormat.Png);
+                    }
+                }
+                catch (Exception ex) { labelInfo.Text = ex.Message; }
 
                 labelInfo.Text = "This image was converted to PNG and saved!";
             }
