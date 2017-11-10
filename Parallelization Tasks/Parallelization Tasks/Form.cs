@@ -151,16 +151,33 @@ namespace Parallelization_Tasks
         {
             if (pictureBox.Image != null)
             {
-                try
-                {
-                    //ToDO
-                }
-                catch (Exception ex) { labelInfo.Text = ex.Message; }
+                // создать диалоговое окна "Save as..."
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Title = "Save picture as...";
+                // предупреждение, если указано имя уже существующего файла
+                saveDialog.OverwritePrompt = true;
+                // предупреждение, если указан несуществующий путь
+                saveDialog.CheckPathExists = true;
+                // список форматы файла
+                saveDialog.Filter = "Image Files(*.BMP)|*.BMP|Image Files(*.PNG)|*.PNG|All files (*.*)|*.*";
+                // откл. кнопку "Справка" в диалоговом окне
+                saveDialog.ShowHelp = false;
 
-                labelInfo.Text = "This image was converted to PNG and saved!";
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        pictureBox.Image.Save(saveDialog.FileName, ImageFormat.Png);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Unable to save image!", "Fault",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    labelInfo.Text = "This image was saved!";
+                }
             }
-            else
-                labelInfo.Text = "Necessary to build a image!";
+            else labelInfo.Text = "Necessary to build a image!";
         }
 
         private void trackBar_ValueChanged(object sender, EventArgs e)
