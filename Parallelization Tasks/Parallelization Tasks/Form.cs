@@ -94,8 +94,7 @@ namespace Parallelization_Tasks
                     // вывести графику в pictureBox
                     var memoryStream = new MemoryStream();
                     bmpRGB.Save(memoryStream, ImageFormat.Bmp);
-                    Image image = Image.FromStream(memoryStream);
-                    pictureBox.Image = image;
+                    pictureBox.Image = Image.FromStream(memoryStream);
                     bmpRGB.Dispose();
                     memoryStream.Dispose();
                     #endregion
@@ -167,7 +166,13 @@ namespace Parallelization_Tasks
                 {
                     try
                     {
-                        pictureBox.Image.Save(saveDialog.FileName, ImageFormat.Png);
+                        using (var bmp = new Bitmap(pictureBox.Width, pictureBox.Height, PixelFormat.Format24bppRgb))
+                        {
+                            var rect = new Rectangle(0, 0, pictureBox.Width, pictureBox.Height);
+                            pictureBox.DrawToBitmap(bmp, rect);
+
+                            bmp.Save(saveDialog.FileName, ImageFormat.Bmp);
+                        }
                     }
                     catch
                     {
