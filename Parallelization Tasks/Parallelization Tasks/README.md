@@ -31,9 +31,12 @@
 ## 
 ## 
 ## Тестовое приложение Parallelization Tasks
+## 
 
-                            screen capture 1
+
 ![alt text](example1.png)
+                                        screen capture 1
 
-                            screen capture 2
+
 ![alt text](example2.png)
+                                        screen capture 2
