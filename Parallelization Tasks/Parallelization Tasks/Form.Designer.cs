@@ -50,7 +50,7 @@
             // buttonStart
             // 
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonStart.Location = new System.Drawing.Point(483, 500);
+            this.buttonStart.Location = new System.Drawing.Point(484, 500);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(75, 30);
             this.buttonStart.TabIndex = 0;

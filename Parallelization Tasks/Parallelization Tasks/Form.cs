@@ -37,7 +37,7 @@ namespace Parallelization_Tasks
 
         // горизонтальное и вертикальное разрешение для Bitmap
         private int pixelWidth = 10240, pixelHeight = 7680;
-        private int bytesPerPixel = 3; // 1 пиксельное значение в 3 байтах
+        private byte bytesPerPixel = 4; // 1 пиксельное значение в 4 байтах
         private byte redValue,
                      greenValue,
                      blueValue;
@@ -51,7 +51,7 @@ namespace Parallelization_Tasks
                 setPixels(textBoxPixelWidth, textBoxPixelHeight);
 
                 /// создать "пустой" (all-zeros) 24bpp Bitmap объект для вывода графики
-                using (Bitmap bmpRGB = new Bitmap(pixelWidth, pixelHeight, PixelFormat.Format24bppRgb))
+                using (Bitmap bmpRGB = new Bitmap(pixelWidth, pixelHeight, PixelFormat.Format32bppArgb))
                 {
                     /// создать Rectangle и заблокировать растровое изображение в системной памяти
                     Rectangle rect = new Rectangle(0, 0, pixelWidth, pixelHeight);
@@ -67,7 +67,7 @@ namespace Parallelization_Tasks
                     // запуск таймера
                     Stopwatch watch = Stopwatch.StartNew(); // применяется для операций отсчета времени
 
-                    var tb = trackBar.Value;
+                    byte tb = (byte)trackBar.Value;
                     if (radioButtonMulti.Checked == true)
                     {
                         // данные для всего изображения находятся между 0 и pixelWidth / 2
@@ -105,11 +105,11 @@ namespace Parallelization_Tasks
         }
 
         // генерирует данные для графики
-        private void generateGraphData(ref BitmapData bmpData, int tb, int partitionStart, int partitionEnd)
+        private void generateGraphData(ref BitmapData bmpData, byte tb, int partitionStart, int partitionEnd)
         {
             int Y = pixelHeight / 2, X = pixelWidth / 2;
 
-            for (short x = (short)partitionStart; x < partitionEnd; x++) // iterations = X
+            for (int x = partitionStart; x < partitionEnd; x++) // iterations = X
             {
                 double p = Math.Sqrt(X * X - x * x);
 
@@ -121,8 +121,8 @@ namespace Parallelization_Tasks
 
                     #region plotXY
                     // изображение зеркально относительно оси X поэтому метод plotXY вызывается дважды
-                    plotXY(ref bmpData, (int)(-x + (pixelWidth / 2)), (int)(y + (pixelHeight / 2)));
-                    plotXY(ref bmpData, (int)(x + (pixelWidth / 2)), (int)(y + (pixelHeight / 2)));
+                    plotXY(ref bmpData, -x + (pixelWidth / 2), (int)(y + (pixelHeight / 2)));
+                    plotXY(ref bmpData, x + (pixelWidth / 2), (int)(y + (pixelHeight / 2)));
                     #endregion
                 }
             }
@@ -140,9 +140,10 @@ namespace Parallelization_Tasks
                 // построение пиксела
                 int index = (y * pixelWidth + x ) * bytesPerPixel;
                 // назначить компонент RGB-значений к указателю
-                ptr[index + 2] = redValue;
-                ptr[index + 1] = greenValue;
                 ptr[index] = blueValue;
+                ptr[index + 1] = greenValue;
+                ptr[index + 2] = redValue;
+                ptr[index + 3] = 0xBF;
             }
         }
 
@@ -157,7 +158,7 @@ namespace Parallelization_Tasks
                 saveDialog.OverwritePrompt = true;
                 // предупреждение, если указан несуществующий путь
                 saveDialog.CheckPathExists = true;
-                // список форматы файла
+                // список форматов файла
                 saveDialog.Filter = "Image Files(*.BMP)|*.BMP|Image Files(*.PNG)|*.PNG|All files (*.*)|*.*";
                 // откл. кнопку "Справка" в диалоговом окне
                 saveDialog.ShowHelp = false;
@@ -166,7 +167,7 @@ namespace Parallelization_Tasks
                 {
                     try
                     {
-                        using (var bmp = new Bitmap(pictureBox.Width, pictureBox.Height, PixelFormat.Format24bppRgb))
+                        using (var bmp = new Bitmap(pictureBox.Width, pictureBox.Height, PixelFormat.Format32bppArgb))
                         {
                             var rect = new Rectangle(0, 0, pictureBox.Width, pictureBox.Height);
                             pictureBox.DrawToBitmap(bmp, rect);
