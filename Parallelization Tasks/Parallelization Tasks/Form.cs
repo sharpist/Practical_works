@@ -30,8 +30,19 @@ namespace Parallelization_Tasks
             }
             if (f == true)
             {
-                this.pixelWidth = Int32.Parse(textBoxPixelWidth.Text);
-                this.pixelHeight = Int32.Parse(textBoxPixelHeight.Text);
+                if (Int32.Parse(textBoxPixelWidth.Text) / Int32.Parse(textBoxPixelHeight.Text) <= 2.95)
+                {
+                    this.pixelWidth = Int32.Parse(textBoxPixelWidth.Text);
+                    this.pixelHeight = Int32.Parse(textBoxPixelHeight.Text);
+                }
+                else
+                {
+                    this.pixelWidth = Int32.Parse(textBoxPixelWidth.Text);
+                    textBoxPixelWidth.Text = this.pixelWidth.ToString();
+
+                    this.pixelHeight = (int)(double.Parse(textBoxPixelWidth.Text) / 2.95);
+                    textBoxPixelHeight.Text = this.pixelHeight.ToString();
+                }
             }
         }
 

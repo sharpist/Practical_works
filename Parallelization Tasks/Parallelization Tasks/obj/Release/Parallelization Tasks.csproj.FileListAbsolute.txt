@@ -14,3 +14,4 @@ C:\Users\Alexander\Documents\GitHub\Practical_works\Parallelization Tasks\Parall
 C:\Users\Alexander\Documents\GitHub\Practical_works\Parallelization Tasks\Parallelization Tasks\obj\Release\Parallelization_Tasks.Form.resources
 C:\Users\Alexander\Documents\GitHub\Practical_works\Parallelization Tasks\Parallelization Tasks\obj\Release\Parallelization_Tasks.Properties.Resources.resources
 C:\Users\Alexander\Documents\GitHub\Practical_works\Parallelization Tasks\Parallelization Tasks\obj\Release\Parallelization Tasks.csproj.GenerateResource.Cache
+C:\Users\Alexander\Documents\GitHub\Practical_works\Parallelization Tasks\Parallelization Tasks\obj\Release\Parallelization Tasks.csprojResolveAssemblyReference.cache
