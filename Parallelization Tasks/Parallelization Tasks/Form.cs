@@ -15,37 +15,6 @@ namespace Parallelization_Tasks
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
-        private void setPixels(TextBox textBoxPixelWidth, TextBox textBoxPixelHeight)
-        {
-            bool f = false;
-            foreach(char c in textBoxPixelWidth.Text)
-            {
-                if (Char.IsNumber(c)) f = true;
-                else { throw new Exception("Incorrect data!"); }
-            }
-            foreach (char c2 in textBoxPixelHeight.Text)
-            {
-                if (Char.IsNumber(c2)) f = true;
-                else { throw new Exception("Incorrect data!"); }
-            }
-            if (f == true)
-            {
-                if (Int32.Parse(textBoxPixelWidth.Text) / Int32.Parse(textBoxPixelHeight.Text) <= 2.95)
-                {
-                    this.pixelWidth = Int32.Parse(textBoxPixelWidth.Text);
-                    this.pixelHeight = Int32.Parse(textBoxPixelHeight.Text);
-                }
-                else
-                {
-                    this.pixelWidth = Int32.Parse(textBoxPixelWidth.Text);
-                    textBoxPixelWidth.Text = this.pixelWidth.ToString();
-
-                    this.pixelHeight = (int)(double.Parse(textBoxPixelWidth.Text) / 2.95);
-                    textBoxPixelHeight.Text = this.pixelHeight.ToString();
-                }
-            }
-        }
-
         // горизонтальное и вертикальное разрешение для Bitmap
         private int pixelWidth = 10240, pixelHeight = 7680;
         private byte bytesPerPixel = 4; // 1 пиксельное значение в 4 байтах
@@ -57,6 +26,7 @@ namespace Parallelization_Tasks
         private void buttonStart_Click(object sender, EventArgs e)
         {
             pictureBox.Image = null;
+
             try
             {
                 setPixels(textBoxPixelWidth, textBoxPixelHeight);
@@ -106,7 +76,7 @@ namespace Parallelization_Tasks
                     var memoryStream = new MemoryStream();
                     bmpRGB.Save(memoryStream, ImageFormat.Bmp);
                     pictureBox.Image = Image.FromStream(memoryStream);
-                    bmpRGB.Dispose();
+
                     memoryStream.Dispose();
                     #endregion
                 }
@@ -155,6 +125,48 @@ namespace Parallelization_Tasks
                 ptr[index + 1] = greenValue;
                 ptr[index + 2] = redValue;
                 ptr[index + 3] = 0xBF;
+            }
+        }
+
+        private void setPixels(TextBox textBoxPixelWidth, TextBox textBoxPixelHeight)
+        {
+            bool f = false;
+            if (textBoxPixelWidth.Text != String.Empty &&
+                textBoxPixelHeight.Text != String.Empty)
+            {
+                foreach (char c in textBoxPixelWidth.Text)
+                {
+                    if (Char.IsNumber(c)) f = true;
+                    else { throw new Exception("Incorrect data!"); }
+                }
+                foreach (char c2 in textBoxPixelHeight.Text)
+                {
+                    if (Char.IsNumber(c2)) f = true;
+                    else { throw new Exception("Incorrect data!"); }
+                }
+            }
+            else { throw new Exception("Incorrect data!"); }
+
+
+            if (f == true)
+            {
+                if (Int32.Parse(textBoxPixelWidth.Text) /
+                    Int32.Parse(textBoxPixelHeight.Text) <= 2.95)
+                    this.pixelHeight = Int32.Parse(textBoxPixelHeight.Text);
+                else
+                {
+                    this.pixelHeight = (int)(double.Parse(textBoxPixelWidth.Text) / 2.95);
+                    textBoxPixelHeight.Text = this.pixelHeight.ToString();
+                }
+
+                if (this.pixelHeight /
+                    Int32.Parse(textBoxPixelWidth.Text) <= 2.95)
+                    this.pixelWidth = Int32.Parse(textBoxPixelWidth.Text);
+                else
+                {
+                    this.pixelWidth = (int)(double.Parse(textBoxPixelHeight.Text) / 2.95);
+                    textBoxPixelWidth.Text = this.pixelWidth.ToString();
+                }
             }
         }
 
