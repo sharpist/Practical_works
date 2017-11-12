@@ -18,9 +18,7 @@ namespace Parallelization_Tasks
         // горизонтальное и вертикальное разрешение для Bitmap
         private int pixelWidth = 10240, pixelHeight = 7680;
         private byte bytesPerPixel = 4; // 1 пиксельное значение в 4 байтах
-        private byte redValue,
-                     greenValue,
-                     blueValue;
+        private byte redValue, greenValue, blueValue;
 
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -29,9 +27,9 @@ namespace Parallelization_Tasks
 
             try
             {
-                setPixels(textBoxPixelWidth, textBoxPixelHeight);
+                Assistant.SetResolution(ref pixelWidth, ref pixelHeight, textBoxPixelWidth, textBoxPixelHeight);
 
-                /// создать "пустой" (all-zeros) 24bpp Bitmap объект для вывода графики
+                /// создать "пустой" (all-zeros) 32bpp Bitmap объект для вывода графики
                 using (Bitmap bmpRGB = new Bitmap(pixelWidth, pixelHeight, PixelFormat.Format32bppArgb))
                 {
                     /// создать Rectangle и заблокировать растровое изображение в системной памяти
@@ -82,7 +80,6 @@ namespace Parallelization_Tasks
                 }
             }
             catch (Exception ex) { labelInfo.Text = ex.Message; }
-            finally { }
         }
 
         // генерирует данные для графики
@@ -128,85 +125,9 @@ namespace Parallelization_Tasks
             }
         }
 
-        private void setPixels(TextBox textBoxPixelWidth, TextBox textBoxPixelHeight)
-        {
-            bool f = false;
-            if (textBoxPixelWidth.Text != String.Empty &&
-                textBoxPixelHeight.Text != String.Empty)
-            {
-                foreach (char c in textBoxPixelWidth.Text)
-                {
-                    if (Char.IsNumber(c)) f = true;
-                    else { throw new Exception("Incorrect data!"); }
-                }
-                foreach (char c2 in textBoxPixelHeight.Text)
-                {
-                    if (Char.IsNumber(c2)) f = true;
-                    else { throw new Exception("Incorrect data!"); }
-                }
-            }
-            else { throw new Exception("Incorrect data!"); }
-
-
-            if (f == true)
-            {
-                if (Int32.Parse(textBoxPixelWidth.Text) /
-                    Int32.Parse(textBoxPixelHeight.Text) <= 2.95)
-                    this.pixelHeight = Int32.Parse(textBoxPixelHeight.Text);
-                else
-                {
-                    this.pixelHeight = (int)(double.Parse(textBoxPixelWidth.Text) / 2.95);
-                    textBoxPixelHeight.Text = this.pixelHeight.ToString();
-                }
-
-                if (this.pixelHeight /
-                    Int32.Parse(textBoxPixelWidth.Text) <= 2.95)
-                    this.pixelWidth = Int32.Parse(textBoxPixelWidth.Text);
-                else
-                {
-                    this.pixelWidth = (int)(double.Parse(textBoxPixelHeight.Text) / 2.95);
-                    textBoxPixelWidth.Text = this.pixelWidth.ToString();
-                }
-            }
-        }
-
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if (pictureBox.Image != null)
-            {
-                // создать диалоговое окна "Save as..."
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Title = "Save picture as...";
-                // предупреждение, если указано имя уже существующего файла
-                saveDialog.OverwritePrompt = true;
-                // предупреждение, если указан несуществующий путь
-                saveDialog.CheckPathExists = true;
-                // список форматов файла
-                saveDialog.Filter = "Image Files(*.BMP)|*.BMP|Image Files(*.PNG)|*.PNG|All files (*.*)|*.*";
-                // откл. кнопку "Справка" в диалоговом окне
-                saveDialog.ShowHelp = false;
-
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        using (var bmp = new Bitmap(pictureBox.Width, pictureBox.Height, PixelFormat.Format32bppArgb))
-                        {
-                            var rect = new Rectangle(0, 0, pictureBox.Width, pictureBox.Height);
-                            pictureBox.DrawToBitmap(bmp, rect);
-
-                            bmp.Save(saveDialog.FileName, ImageFormat.Bmp);
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Unable to save image!", "Fault",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    labelInfo.Text = "This image was saved!";
-                }
-            }
-            else labelInfo.Text = "Necessary to build a image!";
+            Assistant.Save(pictureBox, labelInfo);
         }
 
         private void trackBar_ValueChanged(object sender, EventArgs e)
