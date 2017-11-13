@@ -17,17 +17,17 @@ namespace Parallelization_Tasks
 
         // горизонтальное и вертикальное разрешение для Bitmap
         private int pixelWidth = 10240, pixelHeight = 7680;
-        private byte bytesPerPixel = 4; // 1 пиксельное значение в 4 байтах
+        private byte bytesPerPixel { get; } = 4; // 1 пиксельное значение в 4 байтах
         private byte redValue, greenValue, blueValue;
 
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            pictureBox.Image = null;
+            pictureBox.Image = null; labelInfo.Text = null;
 
             try
             {
-                Assistant.SetResolution(ref pixelWidth, ref pixelHeight, textBoxPixelWidth, textBoxPixelHeight);
+                SetResolution();
 
                 /// создать "пустой" (all-zeros) 32bpp Bitmap объект для вывода графики
                 using (Bitmap bmpRGB = new Bitmap(pixelWidth, pixelHeight, PixelFormat.Format32bppArgb))
@@ -123,16 +123,6 @@ namespace Parallelization_Tasks
                 ptr[index + 2] = redValue;
                 ptr[index + 3] = 0xBF;
             }
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            Assistant.Save(pictureBox, labelInfo);
-        }
-
-        private void trackBar_ValueChanged(object sender, EventArgs e)
-        {
-            labelInfo.Text = $"figure {(Math.Round(trackBar.Value / 1.0)).ToString()}";
         }
     }
 }

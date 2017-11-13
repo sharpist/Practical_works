@@ -5,10 +5,9 @@ using System.Windows.Forms;
 
 namespace Parallelization_Tasks
 {
-    struct Assistant
+    public partial class Form
     {
-        public static void SetResolution(ref int pixelWidth, ref int pixelHeight,
-            TextBox textBoxPixelWidth, TextBox textBoxPixelHeight)
+        private void SetResolution()
         {
             // check for empty
             if (textBoxPixelWidth.Text != String.Empty &&
@@ -68,7 +67,7 @@ namespace Parallelization_Tasks
             }
         }
 
-        public static void Save(PictureBox pictureBox, Label labelInfo)
+        private void buttonSave_Click(object sender, EventArgs e)
         {
             if (pictureBox.Image != null)
             {
@@ -105,6 +104,11 @@ namespace Parallelization_Tasks
                 }
             }
             else labelInfo.Text = "Necessary to build a image!";
+        }
+
+        private void trackBar_ValueChanged(object sender, EventArgs e)
+        {
+            labelInfo.Text = $"Figure {(Math.Round(trackBar.Value / 1.0)).ToString()}";
         }
     }
 }
