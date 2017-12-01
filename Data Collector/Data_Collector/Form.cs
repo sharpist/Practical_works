@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,22 +32,29 @@ namespace Data_Collector
             };
         }
 
-        // ссылки анкет на страницах каталога
-        private List<string> allLinks;
         // шаблоны
         private string[] patterns;
+        // ссылки анкет со страниц каталога
+        private List<string> allLinks;
+        // найденная информация в анкетах
+        private List<Profile> allProfiles;
         // ограничитель страниц
         private readonly ushort pagesLimit = 1;
 
+
         private void goWalker_button_Click(object sender, EventArgs e)
         {
-            for (ushort i = 1; i <= pagesLimit; i++)
+            try
             {
-                // получить данные страницы
-                parsHtml(getHtmlPage(@"https://job.ru/catalog/production/page/" + i.ToString()));
+                for (ushort i = 1; i <= pagesLimit; i++)
+                {
+                    // получить данные страницы
+                    parsHtml(getHtmlPage(@"https://job.ru/catalog/production/page/" + i.ToString()));
+                }
+                // получить данные анкеты
+                parsHtml(allLinks);
             }
-            // получить данные анкеты
-            parsHtml(allLinks);
+            catch (Exception ex) { textBox.Text = ex.Message; }
         }
     }
 }

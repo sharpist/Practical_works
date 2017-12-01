@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,25 +31,16 @@ namespace Data_Collector
         // парсит по заданному шаблону страницу
         private void parsHtml(string HtmlText)
         {
-            // шаблон (регулярное выражение)
-            string pattern = this.patterns[0];
-
-
             // найденные соответствия
-            MatchCollection matches = Regex.Matches(HtmlText, pattern, RegexOptions.IgnoreCase);
+            MatchCollection matches = Regex.Matches(HtmlText, patterns[0], RegexOptions.IgnoreCase);
 
-
-            if (matches.Count == 0)  // проверяем найден ли
+            if (matches.Count == 0) // проверяем найден ли
             { MessageBox.Show("не найден"); }
 
             else // если найдено, перебираем масив matches
             {
-                for (int i = 0; i < matches.Count; i++)
-                {
-                    Match match = matches[i];
-
-                    this.allLinks.Add(@"https://www.job.ru" + match.Groups[1].Value);
-                }
+                for (ushort i = 0; i < matches.Count; i++) // выводим ссылки в коллекцию
+                { this.allLinks.Add(@"https://www.job.ru" + (matches[i]).Groups[1].Value); }
             }
         }
 
@@ -56,15 +48,14 @@ namespace Data_Collector
         // парсит по заданному шаблону анкету
         private void parsHtml(List<string> allLinks)
         {
-            foreach (string link in allLinks) // получаем ссылку на анкету
+            for (ushort i = 0; i < allLinks.Count; i++) // получаем ссылку на анкету
             {
-                string HtmlText = getHtmlPage(link);
+                string HtmlText = getHtmlPage(allLinks[i]);
 
-                // найденные соответствия
-                MatchCollection matches = null;
-                for (byte i = 1; i <= 3; i++) // перебираем регулярные выражения
+                for (ushort j = 1; j <= 3; j++) // перебираем регулярные выражения
                 {
-                    matches = Regex.Matches(HtmlText, patterns[i], RegexOptions.IgnoreCase);
+                    // найденные соответствия
+                    MatchCollection matches = Regex.Matches(HtmlText, patterns[j], RegexOptions.IgnoreCase);
                     if (matches.Count != 0)
                     {
                         Match match = matches[0];
