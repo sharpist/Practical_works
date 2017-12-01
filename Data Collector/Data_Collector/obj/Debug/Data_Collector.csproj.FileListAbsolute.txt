@@ -1,8 +1,9 @@
-C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\bin\Debug\WindowsFormsApplication1.exe.config
-C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\bin\Debug\WindowsFormsApplication1.exe
-C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\bin\Debug\Data Collector.exe.config
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\bin\Debug\Data Collector.exe
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\bin\Debug\Data Collector.pdb
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\obj\Debug\Data_Collector.csprojResolveAssemblyReference.cache
 C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\obj\Debug\Data_Collector.Form.resources
-C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\obj\Debug\Data_Collector.Properties.Resources.resources
 C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\obj\Debug\Data_Collector.csproj.GenerateResource.Cache
-C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\obj\Debug\WindowsFormsApplication1.exe
-C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\obj\Debug\Data Collector.exe
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\obj\Debug\Data Collector.pdb
