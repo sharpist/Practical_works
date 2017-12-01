@@ -18,8 +18,11 @@ namespace Data_Collector
     {
         public Form() {
             InitializeComponent();
-            allLinks = new List<string>();
-            patterns = new string[4]
+
+            this.pages = new List<string>();
+            this.links = new List<string>();
+
+            this.patterns = new string[4]
             {
                 // анкета
                 @"href=\D(\/[-a-z]{2,}\w+\/+[0-9]{5,7})\/\D\s",
@@ -32,29 +35,47 @@ namespace Data_Collector
             };
         }
 
-        // шаблоны
-        private string[] patterns;
-        // ссылки анкет со страниц каталога
-        private List<string> allLinks;
-        // найденная информация в анкетах
-        private List<Profile> allProfiles;
-        // ограничитель страниц
-        private readonly ushort pagesLimit = 1;
+        private string[] patterns;         // шаблоны
+        private List<string> pages, links; // страницы / ссылки анкет
+        private List<Profile> profiles;    // найденная информация в анкетах
+        private readonly ushort limit = 1; // ограничитель страниц
 
 
-        private void goWalker_button_Click(object sender, EventArgs e)
+        private async void goWalker_button_Click(object sender, EventArgs e)
         {
             try
             {
-                for (ushort i = 1; i <= pagesLimit; i++)
+                // получить HTML страницы
+                for (ushort i = 1; i <= limit; i++)
                 {
-                    // получить данные страницы
-                    parsHtml(getHtmlPage(@"https://job.ru/catalog/production/page/" + i.ToString()));
+                    pages.Add(await getHtmlAsync(@"https://job.ru/catalog/production/page/" + i.ToString()));
                 }
-                // получить данные анкеты
-                parsHtml(allLinks);
+
+                await parsHtmlPageAsync(this.pages); // получить ссылки анкет
+                //await parsHtmlLinkAsync(this.links); // получить данные анкет
+                parsHtmlLink(this.links);
             }
-            catch (Exception ex) { textBox.Text = ex.Message; }
+
+            catch (Exception ex)
+            { textBox.Text = ex.Message; }
         }
+
+
+        private async Task<string> getHtmlAsync(string param)
+        {
+            Task<string> task = Task.Run(() => getHtml(param));
+            await task;
+            return task.Result;
+        }
+        private async Task parsHtmlPageAsync(List<string> pages)
+        {
+            Task task = Task.Run(() => parsHtmlPage(this.pages));
+            await task;
+        }
+        //private async Task parsHtmlLinkAsync(List<string> links)
+        //{
+        //    Task task = Task.Run(() => parsHtmlLink(this.links));
+        //    await task;
+        //}
     }
 }

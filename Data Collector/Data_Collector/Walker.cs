@@ -17,7 +17,7 @@ namespace Data_Collector
     public partial class Form
     {
         // получить данные страницы/анкеты
-        private string getHtmlPage(string url)
+        private string getHtml(string url)
         {
             string HtmlText = string.Empty;
             HttpWebRequest myHttwebrequest = (HttpWebRequest)HttpWebRequest.Create(url);
@@ -29,40 +29,40 @@ namespace Data_Collector
 
 
         // парсит по заданному шаблону страницу
-        private void parsHtml(string HtmlText)
+        private void parsHtmlPage(List<string> pages)
         {
-            // найденные соответствия
-            MatchCollection matches = Regex.Matches(HtmlText, patterns[0], RegexOptions.IgnoreCase);
-
-            if (matches.Count == 0) // проверяем найден ли
-            { MessageBox.Show("не найден"); }
-
-            else // если найдено, перебираем масив matches
+            for (ushort i = 0; i < pages.Count; i++)
             {
-                for (ushort i = 0; i < matches.Count; i++) // выводим ссылки в коллекцию
-                { this.allLinks.Add(@"https://www.job.ru" + (matches[i]).Groups[1].Value); }
+                // найденные соответствия
+                MatchCollection matches = Regex.Matches(pages[i], patterns[0], RegexOptions.IgnoreCase);
+
+                if (matches.Count == 0) // проверяем найден ли
+                { MessageBox.Show("не найден"); }
+
+                else // если найдено, перебираем масив matches
+                {
+                    for (ushort j = 0; j < matches.Count; j++) // выводим ссылки в коллекцию
+                    { this.links.Add(@"https://www.job.ru" + (matches[j]).Groups[1].Value); }
+                }
             }
         }
 
 
         // парсит по заданному шаблону анкету
-        private void parsHtml(List<string> allLinks)
+        private void parsHtmlLink(List<string> links)
         {
-            for (ushort i = 0; i < allLinks.Count; i++) // получаем ссылку на анкету
+            for (ushort i = 0; i < links.Count; i++)
             {
-                string HtmlText = getHtmlPage(allLinks[i]);
-
                 for (ushort j = 1; j <= 3; j++) // перебираем регулярные выражения
                 {
                     // найденные соответствия
-                    MatchCollection matches = Regex.Matches(HtmlText, patterns[j], RegexOptions.IgnoreCase);
+                    MatchCollection matches = Regex.Matches(getHtml(links[i]), patterns[j], RegexOptions.IgnoreCase);
                     if (matches.Count != 0)
                     {
-                        Match match = matches[0];
-                        textBox.Text += (match.Groups[1].Value + match.Groups[2].Value) + Environment.NewLine;
+                        textBox.Text += ((matches[0]).Groups[1].Value + (matches[0]).Groups[2].Value) + Environment.NewLine;
                     }
                 }
-                textBox.Text += Environment.NewLine; // доп.пустая строка
+                textBox.Text += Environment.NewLine;
             }
         }
     }
