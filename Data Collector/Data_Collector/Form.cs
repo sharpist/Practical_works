@@ -1,16 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Data_Collector
 {
@@ -19,7 +9,7 @@ namespace Data_Collector
         public Form() {
             InitializeComponent();
 
-            this.pages = new List<string>();
+            this.htmlText = new List<string>();
             this.links = new List<string>();
 
             this.patterns = new string[4]
@@ -35,25 +25,33 @@ namespace Data_Collector
             };
         }
 
-        private string[] patterns;         // шаблоны
-        private List<string> pages, links; // страницы / ссылки анкет
-        private List<Profile> profiles;    // найденная информация в анкетах
-        private readonly ushort limit = 1; // ограничитель страниц
+        private string[] patterns;            // шаблоны
+        private List<string> htmlText, links; // html-текст / ссылки анкет
+        private List<Profile> profiles;       // найденная информация в анкетах
+        private readonly ushort limit = 1;    // ограничитель страниц
 
 
         private async void goWalker_button_Click(object sender, EventArgs e)
         {
             try
             {
-                // получить HTML страницы
+                // получить HTML страниц
                 for (ushort i = 1; i <= limit; i++)
                 {
-                    pages.Add(await getHtmlAsync(@"https://job.ru/catalog/production/page/" + i.ToString()));
+                    htmlText.Add(await getHtmlAsync(@"https://job.ru/catalog/production/page/" + i.ToString()));
                 }
 
-                await parsHtmlPageAsync(this.pages); // получить ссылки анкет
-                //await parsHtmlLinkAsync(this.links); // получить данные анкет
-                parsHtmlLink(this.links);
+                await parsHtmlPageAsync(); // получить ссылки анкет
+
+                // получить HTML профилей
+                for (ushort i = 0; i < links.Count; i++)
+                {
+                    htmlText.Add(await getHtmlAsync(links[i]));
+                }
+                links.Clear();
+
+                //await parsHtmlProfileAsync(); // получить данные анкет
+                parsHtmlProfile();
             }
 
             catch (Exception ex)
@@ -67,15 +65,15 @@ namespace Data_Collector
             await task;
             return task.Result;
         }
-        private async Task parsHtmlPageAsync(List<string> pages)
+        private async Task parsHtmlPageAsync()
         {
-            Task task = Task.Run(() => parsHtmlPage(this.pages));
+            Task task = Task.Run(() => parsHtmlPage());
             await task;
         }
-        //private async Task parsHtmlLinkAsync(List<string> links)
-        //{
-        //    Task task = Task.Run(() => parsHtmlLink(this.links));
-        //    await task;
-        //}
+        private async Task parsHtmlProfileAsync()
+        {
+            Task task = Task.Run(() => parsHtmlProfile());
+            await task;
+        }
     }
 }
