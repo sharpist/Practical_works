@@ -28,7 +28,15 @@ namespace Data_Collector
                         double.Parse(profile.Salary) >= min)
                         filteredProfiles.Add(profile);
                 }
-                //profiles.Clear();
+                profiles.Clear();
+
+                textBox.Text = "";
+                for (ushort i = 0; i < filteredProfiles.Count; i++)
+                {
+                    textBox.Text += filteredProfiles[i].Profession + Environment.NewLine;
+                    textBox.Text += filteredProfiles[i].Salary     + Environment.NewLine;
+                    textBox.Text +=                                  Environment.NewLine;
+                }
             }
 
             else { info.Text = "Данные для фильтра не собраны!"; }

@@ -31,13 +31,17 @@ namespace Data_Collector
         private string[] patterns;                        // шаблоны
         private List<string> htmlText, links;             // html-текст / ссылки анкет
         private List<Profile> profiles, filteredProfiles; // найденная информация в анкетах
-        private readonly ushort limit = 2;                // ограничитель страниц
+        private byte limit;                               // ограничитель страниц
 
 
         private async void goWalker_button_Click(object sender, EventArgs e)
         {
             try
             {
+                limit = (byte)trackBar.Value; trackBar.Enabled = false;
+                textBox.Text = $"Сделана попытка получения данных с веб-ресурса...{Environment.NewLine}Ждите, процесс работает в фоновом режиме...";
+
+
                 await getHtmlAsync(0, limit, @"https://job.ru/catalog/production/page/"); // получить HTML страниц
 
                 await parsHtmlPageAsync();                                                // получить ссылки анкет
@@ -48,12 +52,15 @@ namespace Data_Collector
                 await parsHtmlProfileAsync();                                             // получить данные анкет
 
 
+
+                textBox.Text = "";
                 for (ushort i = 0; i < profiles.Count; i++)
                 {
                     textBox.Text += profiles[i].Profession + Environment.NewLine;
                     textBox.Text += profiles[i].Salary     + Environment.NewLine;
                     textBox.Text +=                          Environment.NewLine;
                 }
+                trackBar.Enabled = true;
             }
 
             catch (Exception ex)
@@ -72,12 +79,14 @@ namespace Data_Collector
             Task task1 = Task.Run(() => parsHtmlPage(0, htmlText.Count / 2));
             Task task2 = Task.Run(() => parsHtmlPage(htmlText.Count / 2, htmlText.Count));
             await task1; await task2;
+            htmlText.Clear();
         }
         private async Task parsHtmlProfileAsync()
         {
             Task task1 = Task.Run(() => parsHtmlProfile(0, htmlText.Count / 2));
             Task task2 = Task.Run(() => parsHtmlProfile(htmlText.Count / 2, htmlText.Count));
             await task1; await task2;
+            htmlText.Clear();
         }
         #endregion
     }

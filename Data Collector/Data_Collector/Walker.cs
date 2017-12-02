@@ -24,7 +24,7 @@ namespace Data_Collector
                 HttpWebResponse myHttpWebresponse = (HttpWebResponse)myHttwebrequest.GetResponse();
                 StreamReader strm = new StreamReader(myHttpWebresponse.GetResponseStream());
                 htmlText.Add(strm.ReadToEnd());
-                strm.Close();
+                if(strm != null) strm.Close();
             }
         }
 
@@ -46,7 +46,6 @@ namespace Data_Collector
                     { links.Add(@"https://www.job.ru" + (matches[i]).Groups[1].Value); }
                 }
             }
-            htmlText.Clear();
         }
 
 
@@ -55,9 +54,9 @@ namespace Data_Collector
         {
             for (; start < stop; start++)
             {
-                Profile profile = new Profile(); // новый профиль
+                Profile profile = new Profile();      // новый профиль
 
-                for (ushort key = 1; key <= 2; key++)  // перебираем регулярные выражения
+                for (ushort key = 1; key <= 2; key++) // перебираем регулярные выражения
                 {
                     // найденные соответствия
                     MatchCollection matches = Regex.Matches(htmlText[start], patterns[key], RegexOptions.IgnoreCase);
@@ -75,7 +74,6 @@ namespace Data_Collector
                 }
                 profiles.Add(profile);
             }
-            htmlText.Clear();
         }
     }
 }

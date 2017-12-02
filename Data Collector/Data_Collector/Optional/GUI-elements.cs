@@ -5,6 +5,14 @@ namespace Data_Collector
 {
     public partial class Form
     {
+        private void trackBar_Scroll(object sender, EventArgs e)
+        {
+            if (trackBar.Value % 2 != 0) trackBar.Value += 1;
+        }
+        private void trackBar_ValueChanged(object sender, EventArgs e)
+        {
+            info.Text = $"Страниц в обработке: {(Math.Round(trackBar.Value / 1.0)).ToString()}";
+        }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();

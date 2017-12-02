@@ -39,7 +39,9 @@
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trackBar = new System.Windows.Forms.TrackBar();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // goWalker_button
@@ -79,7 +81,7 @@
             // useFilter_button
             // 
             this.useFilter_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.useFilter_button.ForeColor = System.Drawing.Color.Maroon;
+            this.useFilter_button.ForeColor = System.Drawing.Color.Crimson;
             this.useFilter_button.Location = new System.Drawing.Point(475, 513);
             this.useFilter_button.Name = "useFilter_button";
             this.useFilter_button.Size = new System.Drawing.Size(92, 36);
@@ -94,6 +96,7 @@
             // 
             this.info.AutoSize = true;
             this.info.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.info.ForeColor = System.Drawing.SystemColors.InfoText;
             this.info.Location = new System.Drawing.Point(12, 456);
             this.info.MaximumSize = new System.Drawing.Size(555, 20);
             this.info.MinimumSize = new System.Drawing.Size(555, 20);
@@ -138,15 +141,33 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // trackBar
+            // 
+            this.trackBar.LargeChange = 2;
+            this.trackBar.Location = new System.Drawing.Point(189, 508);
+            this.trackBar.Maximum = 50;
+            this.trackBar.Minimum = 2;
+            this.trackBar.Name = "trackBar";
+            this.trackBar.Size = new System.Drawing.Size(131, 45);
+            this.trackBar.SmallChange = 2;
+            this.trackBar.TabIndex = 2;
+            this.trackBar.TabStop = false;
+            this.trackBar.TickFrequency = 2;
+            this.trackBar.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBar.Value = 2;
+            this.trackBar.Scroll += new System.EventHandler(this.trackBar_Scroll);
+            this.trackBar.ValueChanged += new System.EventHandler(this.trackBar_ValueChanged);
             // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 561);
+            this.Controls.Add(this.trackBar);
             this.Controls.Add(this.info);
             this.Controls.Add(this.useFilter_button);
             this.Controls.Add(this.textBox);
@@ -162,6 +183,7 @@
             this.Text = "Data Collector";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,6 +201,7 @@
         private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.TrackBar trackBar;
     }
 }
 
