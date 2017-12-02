@@ -68,8 +68,9 @@ namespace Data_Collector
         }
         private async Task parsHtmlPageAsync()
         {
-            Task task = Task.Run(() => parsHtmlPage());
-            await task;
+            Task task1 = Task.Run(() => parsHtmlPage(0, htmlText.Count / 2));
+            Task task2 = Task.Run(() => parsHtmlPage(htmlText.Count / 2, htmlText.Count));
+            await task1; await task2;
         }
         private async Task parsHtmlProfileAsync()
         {

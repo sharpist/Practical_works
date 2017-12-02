@@ -30,20 +30,20 @@ namespace Data_Collector
 
 
         // парсит по заданному шаблону страницу
-        private void parsHtmlPage()
+        private void parsHtmlPage(int start, int stop)
         {
-            for (ushort i = 0; i < htmlText.Count; i++)
+            for (; start < stop; start++)
             {
                 // найденные соответствия
-                MatchCollection matches = Regex.Matches(htmlText[i], patterns[0], RegexOptions.IgnoreCase);
+                MatchCollection matches = Regex.Matches(htmlText[start], patterns[0], RegexOptions.IgnoreCase);
 
                 if (matches.Count == 0) // проверяем найден ли
                 { MessageBox.Show("не найден"); }
 
                 else // если найдено, перебираем массив matches
                 {
-                    for (ushort j = 0; j < matches.Count; j++) // выводим ссылки в коллекцию
-                    { links.Add(@"https://www.job.ru" + (matches[j]).Groups[1].Value); }
+                    for (ushort i = 0; i < matches.Count; i++) // выводим ссылки в коллекцию
+                    { links.Add(@"https://www.job.ru" + (matches[i]).Groups[1].Value); }
                 }
             }
             htmlText.Clear();
