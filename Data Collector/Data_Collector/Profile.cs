@@ -2,8 +2,8 @@
 {
     struct Profile
     {
-        public string profession { get; set; }
-        public string salary { get; set; }
-        public string undefined { get; set; }
+        public string Profession { get; set; }
+        public string Salary { get; set; }
+        public string Undefined { get; set; }
     }
 }

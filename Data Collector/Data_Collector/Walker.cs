@@ -9,12 +9,23 @@ namespace Data_Collector
     public partial class Form
     {
         // получить данные страницы/анкеты
-        private string getHtml(string url)
+        private void getHtml(byte key, ushort limit, string url)
         {
-            HttpWebRequest myHttwebrequest = (HttpWebRequest)HttpWebRequest.Create(url);
-            HttpWebResponse myHttpWebresponse = (HttpWebResponse)myHttwebrequest.GetResponse();
-            StreamReader strm = new StreamReader(myHttpWebresponse.GetResponseStream());
-            return strm.ReadToEnd();
+            string address = string.Empty;
+            for (ushort i = 1; i <= limit; i++)
+            {
+                switch (key) {
+                    case 0: address = url + i.ToString();
+                    break;
+                    case 1: address = links[i-1];
+                    break;
+                }
+                HttpWebRequest myHttwebrequest = (HttpWebRequest)HttpWebRequest.Create(address);
+                HttpWebResponse myHttpWebresponse = (HttpWebResponse)myHttwebrequest.GetResponse();
+                StreamReader strm = new StreamReader(myHttpWebresponse.GetResponseStream());
+                htmlText.Add(strm.ReadToEnd());
+                strm.Close();
+            }
         }
 
 
@@ -29,7 +40,7 @@ namespace Data_Collector
                 if (matches.Count == 0) // проверяем найден ли
                 { MessageBox.Show("не найден"); }
 
-                else // если найдено, перебираем масив matches
+                else // если найдено, перебираем массив matches
                 {
                     for (ushort j = 0; j < matches.Count; j++) // выводим ссылки в коллекцию
                     { links.Add(@"https://www.job.ru" + (matches[j]).Groups[1].Value); }
@@ -44,15 +55,30 @@ namespace Data_Collector
         {
             for (ushort i = 0; i < htmlText.Count; i++)
             {
-                for (ushort j = 1; j <= 3; j++) // перебираем регулярные выражения
+                Profile profile = new Profile(); // новый профиль
+
+                for (ushort j = 1; j <= 2; j++)  // перебираем регулярные выражения
                 {
                     // найденные соответствия
                     MatchCollection matches = Regex.Matches(htmlText[i], patterns[j], RegexOptions.IgnoreCase);
                     if (matches.Count != 0)
                     {
-                        textBox.Text += ((matches[0]).Groups[1].Value + (matches[0]).Groups[2].Value) + Environment.NewLine;
+                        switch (j)
+                        {
+                            case 1:
+                            profile.Profession = (matches[0]).Groups[1].Value + (matches[0]).Groups[2].Value + (matches[0]).Groups[3].Value;
+                            break;
+                            case 2:
+                            profile.Salary = (matches[0]).Groups[1].Value + (matches[0]).Groups[2].Value + (matches[0]).Groups[3].Value;
+                            break;
+                            case 3:
+                            profile.Undefined = null;
+                            break;
+                        }
+                        textBox.Text += ((matches[0]).Groups[1].Value + (matches[0]).Groups[2].Value + (matches[0]).Groups[3].Value) + Environment.NewLine;
                     }
                 }
+                profiles.Add(profile);
                 textBox.Text += Environment.NewLine;
             }
             htmlText.Clear();
