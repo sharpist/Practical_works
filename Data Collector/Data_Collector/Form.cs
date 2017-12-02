@@ -12,6 +12,7 @@ namespace Data_Collector
             this.htmlText = new List<string>();
             this.links = new List<string>();
             this.profiles = new List<Profile>();
+            this.filteredProfiles = new List<Profile>();
             this.patterns = new string[3]
             {
                 // анкета
@@ -27,10 +28,10 @@ namespace Data_Collector
             };
         }
 
-        private string[] patterns;            // шаблоны
-        private List<string> htmlText, links; // html-текст / ссылки анкет
-        private List<Profile> profiles;       // найденная информация в анкетах
-        private readonly ushort limit = 2;    // ограничитель страниц
+        private string[] patterns;                        // шаблоны
+        private List<string> htmlText, links;             // html-текст / ссылки анкет
+        private List<Profile> profiles, filteredProfiles; // найденная информация в анкетах
+        private readonly ushort limit = 2;                // ограничитель страниц
 
 
         private async void goWalker_button_Click(object sender, EventArgs e)
