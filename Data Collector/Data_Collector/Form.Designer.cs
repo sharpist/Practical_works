@@ -31,6 +31,7 @@
             this.goWalker_button = new System.Windows.Forms.Button();
             this.label = new System.Windows.Forms.Label();
             this.textBox = new System.Windows.Forms.TextBox();
+            this.useFilter_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // goWalker_button
@@ -65,11 +66,23 @@
             this.textBox.Size = new System.Drawing.Size(570, 400);
             this.textBox.TabIndex = 2;
             // 
+            // useFilter_button
+            // 
+            this.useFilter_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.useFilter_button.Location = new System.Drawing.Point(369, 476);
+            this.useFilter_button.Name = "useFilter_button";
+            this.useFilter_button.Size = new System.Drawing.Size(86, 36);
+            this.useFilter_button.TabIndex = 3;
+            this.useFilter_button.Text = "Filter";
+            this.useFilter_button.UseVisualStyleBackColor = true;
+            this.useFilter_button.Click += new System.EventHandler(this.useFilter_button_Click);
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 561);
+            this.Controls.Add(this.useFilter_button);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.label);
             this.Controls.Add(this.goWalker_button);
@@ -86,6 +99,7 @@
         private System.Windows.Forms.Button goWalker_button;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.Button useFilter_button;
     }
 }
 
