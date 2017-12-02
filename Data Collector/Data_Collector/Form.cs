@@ -30,23 +30,29 @@ namespace Data_Collector
         private string[] patterns;            // шаблоны
         private List<string> htmlText, links; // html-текст / ссылки анкет
         private List<Profile> profiles;       // найденная информация в анкетах
-        private readonly ushort limit = 1;    // ограничитель страниц
+        private readonly ushort limit = 2;    // ограничитель страниц
 
 
         private async void goWalker_button_Click(object sender, EventArgs e)
         {
             try
             {
-                // получить HTML страниц
-                await getHtmlAsync(0, limit, @"https://job.ru/catalog/production/page/");
-                // получить ссылки анкет
-                await parsHtmlPageAsync();
-                // получить HTML профилей
-                await getHtmlAsync(1, (ushort)links.Count);
+                await getHtmlAsync(0, limit, @"https://job.ru/catalog/production/page/"); // получить HTML страниц
+
+                await parsHtmlPageAsync();                                                // получить ссылки анкет
+
+                await getHtmlAsync(1, (ushort)links.Count);                               // получить HTML профилей
                 links.Clear();
-                // получить данные анкет
-                //await parsHtmlProfileAsync();
-                parsHtmlProfile();
+
+                await parsHtmlProfileAsync();                                             // получить данные анкет
+
+
+                for (ushort i = 0; i < profiles.Count; i++)
+                {
+                    textBox.Text += profiles[i].Profession + Environment.NewLine;
+                    textBox.Text += profiles[i].Salary     + Environment.NewLine;
+                    textBox.Text +=                          Environment.NewLine;
+                }
             }
 
             catch (Exception ex)
@@ -54,6 +60,7 @@ namespace Data_Collector
         }
 
 
+        #region группа асинхронных методов
         private async Task getHtmlAsync(byte key, ushort limit, string url = null)
         {
             Task task = Task.Run(() => getHtml(key, limit, url));
@@ -66,8 +73,10 @@ namespace Data_Collector
         }
         private async Task parsHtmlProfileAsync()
         {
-            Task task = Task.Run(() => parsHtmlProfile());
-            await task;
+            Task task1 = Task.Run(() => parsHtmlProfile(0, htmlText.Count / 2));
+            Task task2 = Task.Run(() => parsHtmlProfile(htmlText.Count / 2, htmlText.Count));
+            await task1; await task2;
         }
+        #endregion
     }
 }

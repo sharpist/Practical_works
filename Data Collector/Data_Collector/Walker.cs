@@ -51,35 +51,29 @@ namespace Data_Collector
 
 
         // парсит по заданному шаблону анкету
-        private void parsHtmlProfile()
+        private void parsHtmlProfile(int start, int stop)
         {
-            for (ushort i = 0; i < htmlText.Count; i++)
+            for (; start < stop; start++)
             {
                 Profile profile = new Profile(); // новый профиль
 
-                for (ushort j = 1; j <= 2; j++)  // перебираем регулярные выражения
+                for (ushort key = 1; key <= 2; key++)  // перебираем регулярные выражения
                 {
                     // найденные соответствия
-                    MatchCollection matches = Regex.Matches(htmlText[i], patterns[j], RegexOptions.IgnoreCase);
+                    MatchCollection matches = Regex.Matches(htmlText[start], patterns[key], RegexOptions.IgnoreCase);
                     if (matches.Count != 0)
                     {
-                        switch (j)
-                        {
-                            case 1:
-                            profile.Profession = (matches[0]).Groups[1].Value + (matches[0]).Groups[2].Value + (matches[0]).Groups[3].Value;
+                        switch (key) {
+                            case 1: profile.Profession = (matches[0]).Groups[1].Value + (matches[0]).Groups[2].Value + (matches[0]).Groups[3].Value;
                             break;
-                            case 2:
-                            profile.Salary = (matches[0]).Groups[1].Value + (matches[0]).Groups[2].Value + (matches[0]).Groups[3].Value;
+                            case 2: profile.Salary = (matches[0]).Groups[1].Value + (matches[0]).Groups[2].Value + (matches[0]).Groups[3].Value;
                             break;
-                            case 3:
-                            profile.Undefined = null;
+                            case 3: profile.Undefined = null;
                             break;
                         }
-                        textBox.Text += ((matches[0]).Groups[1].Value + (matches[0]).Groups[2].Value + (matches[0]).Groups[3].Value) + Environment.NewLine;
                     }
                 }
                 profiles.Add(profile);
-                textBox.Text += Environment.NewLine;
             }
             htmlText.Clear();
         }
