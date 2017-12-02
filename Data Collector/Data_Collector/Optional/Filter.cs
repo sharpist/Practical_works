@@ -31,7 +31,7 @@ namespace Data_Collector
                 //profiles.Clear();
             }
 
-            else { textBox.Text = "Данные для фильтра не собраны!"; }
+            else { info.Text = "Данные для фильтра не собраны!"; }
         }
     }
 }
