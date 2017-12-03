@@ -38,8 +38,8 @@ namespace Data_Collector
         {
             try
             {
-                limit = (byte)trackBar.Value; trackBar.Enabled = false;
-                textBox.Text = $"Сделана попытка получения данных с веб-ресурса...{Environment.NewLine}Ждите, процесс работает в фоновом режиме...";
+                limit = (byte)trackBar.Value;
+                setGUI(0);
 
 
                 await getHtmlAsync(0, limit, @"https://job.ru/catalog/production/page/"); // получить HTML страниц
@@ -52,15 +52,13 @@ namespace Data_Collector
                 await parsHtmlProfileAsync();                                             // получить данные анкет
 
 
-
-                textBox.Text = "";
+                setGUI(1);
                 for (ushort i = 0; i < profiles.Count; i++)
                 {
                     textBox.Text += profiles[i].Profession + Environment.NewLine;
                     textBox.Text += profiles[i].Salary     + Environment.NewLine;
                     textBox.Text +=                          Environment.NewLine;
                 }
-                trackBar.Enabled = true;
             }
 
             catch (Exception ex)

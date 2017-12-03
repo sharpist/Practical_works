@@ -21,6 +21,22 @@ namespace Data_Collector
         {
             MessageBox.Show("\"Data Collector\" пример программы для сбора данных с веб ресурса.\nBy Alexander Usov", "О программе");
         }
+        private void setGUI(byte key)
+        {
+            switch (key) {
+                case 0: textBox.Text = $"Сделана попытка получения данных с веб-ресурса...{Environment.NewLine}Ждите, процесс работает в фоновом режиме...";
+                        trackBar.Enabled = false;
+                        useFilter_button.MouseEnter -= useFilter_button_MouseEnter; // отписка для 'Фильтр'
+                        goWalker_button.MouseEnter -= goWalker_button_MouseEnter;   // отписка для 'Извлечь'
+                break;
+
+                case 1: textBox.Text = "";
+                        trackBar.Enabled = true;
+                        useFilter_button.MouseEnter += useFilter_button_MouseEnter; // подписка для 'Фильтр'
+                        goWalker_button.MouseEnter += goWalker_button_MouseEnter;   // подписка для 'Извлечь'
+                break;
+            }
+        }
         private void useFilter_button_MouseEnter(object sender, EventArgs e) // курсор внутри 'Фильтр'
         {
             info.Text = "Вырезать результаты отклоняющиеся на 10% от средней з/п?";
