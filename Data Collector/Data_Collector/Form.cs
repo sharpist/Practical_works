@@ -72,22 +72,6 @@ namespace Data_Collector
             Task task = Task.Run(() => getHtml(key, limit, url));
             await task;
         }
-
-        private void profileBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.profileBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataDataSet);
-
-        }
-
-        private void Form_Load(object sender, EventArgs e)
-        {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataDataSet.Profile". При необходимости она может быть перемещена или удалена.
-            this.profileTableAdapter.Fill(this.dataDataSet.Profile);
-
-        }
-
         private async Task parsHtmlPageAsync()
         {
             Task task1 = Task.Run(() => parsHtmlPage(0, htmlText.Count / 2));
@@ -103,5 +87,20 @@ namespace Data_Collector
             htmlText.Clear();
         }
         #endregion
+
+
+        private void profileBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.profileBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dataDataSet);
+
+        }
+        private void Form_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataDataSet.Profile". При необходимости она может быть перемещена или удалена.
+            this.profileTableAdapter.Fill(this.dataDataSet.Profile);
+
+        }
     }
 }
