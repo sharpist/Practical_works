@@ -67,7 +67,9 @@ namespace Data_Collector
                             break;
                             case 2: profile.Salary = (matches[0]).Groups[1].Value + (matches[0]).Groups[2].Value + (matches[0]).Groups[3].Value;
                             break;
-                            case 3: profile.Undefined = null;
+                            case 3: profile.Description = null;
+                            break;
+                            case 4: profile.Demands = null;
                             break;
                         }
                     }

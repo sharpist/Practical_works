@@ -6,3 +6,5 @@ C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collecto
 C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\obj\Debug\Data_Collector.csproj.GenerateResource.Cache
 C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\obj\Debug\Data Collector.exe
 C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\obj\Debug\Data Collector.pdb
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\bin\Debug\Data.mdf
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data_Collector\bin\Debug\Data_log.ldf
