@@ -1,0 +1,21 @@
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Data Collector\Data Collector\bin\Debug\DB.mdf
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Data Collector\Data Collector\bin\Debug\DB_log.ldf
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Data Collector\Data Collector\bin\Debug\Data Collector.exe.config
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Data Collector\Data Collector\bin\Debug\Data Collector.exe
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Data Collector\Data Collector\bin\Debug\Data Collector.pdb
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Data Collector\Data Collector\obj\Debug\Data Collector.csprojResolveAssemblyReference.cache
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Data Collector\Data Collector\obj\Debug\Data_Collector.Form.resources
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Data Collector\Data Collector\obj\Debug\Data_Collector.Properties.Resources.resources
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Data Collector\Data Collector\obj\Debug\Data Collector.csproj.GenerateResource.Cache
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Data Collector\Data Collector\obj\Debug\Data Collector.exe
+C:\Users\Alexander\Documents\Visual Studio 2015\Projects\Data Collector\Data Collector\obj\Debug\Data Collector.pdb
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\bin\Debug\Data Collector.exe.config
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\obj\Debug\Data Collector.exe
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\obj\Debug\Data Collector.pdb
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\obj\Debug\Data_Collector.Form.resources
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\obj\Debug\Data_Collector.Properties.Resources.resources
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\obj\Debug\Data Collector.csproj.GenerateResource.Cache
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\bin\Debug\DB.mdf
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\bin\Debug\DB_log.ldf
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\bin\Debug\Data Collector.exe
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\bin\Debug\Data Collector.pdb
