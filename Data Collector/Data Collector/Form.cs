@@ -61,12 +61,12 @@ namespace Data_Collector
                 {
                     for (ushort i = 0; i < profiles.Count; i++)
                     {
-                        textBox.Text += profiles[i].Company + Environment.NewLine;
-                        textBox.Text += profiles[i].Profession + Environment.NewLine;
-                        textBox.Text += profiles[i].Salary + Environment.NewLine;
+                        textBox.Text += profiles[i].Company     + Environment.NewLine;
+                        textBox.Text += profiles[i].Profession  + Environment.NewLine;
+                        textBox.Text += profiles[i].Salary      + Environment.NewLine;
                         textBox.Text += profiles[i].Description + Environment.NewLine;
-                        textBox.Text += profiles[i].Demand + Environment.NewLine;
-                        textBox.Text += Environment.NewLine;
+                        textBox.Text += profiles[i].Demand      + Environment.NewLine;
+                        textBox.Text +=                           Environment.NewLine;
                     }
                 }
                 else { textBox.Text = "Коллекция profiles не содержит данные!"; }

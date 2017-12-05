@@ -7,19 +7,22 @@ namespace Data_Collector
     public partial class Form
     {
         private SqlConnection sqlConnection; // соединение с DB
-        private string connectionString =    // строка подключения
-            "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\\\"\\DB.mdf\\\";Integrated Security=True";
-        
-        
+        private string connectionString;     // строка подключения
+
+
         private async void Form_Load(object sender, EventArgs e)
         {
-            sqlConnection = new SqlConnection(connectionString);
+            // подготовить адрес
+            string dirName = System.IO.Directory.GetCurrentDirectory(), myDB = dirName + "\\DB.mdf";
+            connectionString = "Data Source=" + myDB;
 
+            sqlConnection = new SqlConnection(connectionString);
             await sqlConnection.OpenAsync(); // открываем соединение с DB
 
             SqlDataReader sqlReader = null;  // получить таблицу в табличном представлении
             // запрос к DB                         инструкция запрос         соединение
             SqlCommand command = new SqlCommand("SELECT * FROM [Profile]", sqlConnection); // (*) считывать все колонки во всех строках
+
 
             try
             {
