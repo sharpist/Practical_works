@@ -69,7 +69,7 @@ namespace Data_Collector
                 // выполнить команды INSERT
                 await command.ExecuteNonQueryAsync();
             }
-            else { textBox.Text = "Коллекция profiles не содержит данные!"; }
+            else { textBox.Text = "Заполните все поля!"; }
         }
         private void profileBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {

@@ -57,17 +57,27 @@ namespace Data_Collector
             switch (key) {
                 case 0: textBox.Text = $"Получение данных с веб-ресурса...{Environment.NewLine}Процесс работает в фоновом режиме...";
                 trackBar.Enabled = false;
-                useFilter_button.MouseEnter -= useFilter_button_MouseEnter;  // отписка для 'Фильтр'
-                goWalker_button.MouseEnter -= goWalker_button_MouseEnter;    // отписка для 'Извлечь'
-                insertDB_button.MouseEnter -= insertDB_button_MouseEnter;     // отписка для 'DB'
-                trackBar.MouseEnter -= trackBar_MouseEnter;                  // отписка для 'trackBar'
+                useFilter_button.MouseEnter   -= useFilter_button_MouseEnter; // отписка для 'Фильтр'
+                goWalker_button.MouseEnter    -= goWalker_button_MouseEnter;  // отписка для 'Извлечь'
+                insertDB_button.MouseEnter    -= insertDB_button_MouseEnter;  // отписка для 'DB'
+                trackBar.MouseEnter           -= trackBar_MouseEnter;         // отписка для 'trackBar'
+                textBoxCompany.MouseEnter     -= textBoxCompany_MouseEnter;
+                textBoxProfession.MouseEnter  -= textBoxProfession_MouseEnter;
+                textBoxSalary.MouseEnter      -= textBoxSalary_MouseEnter;
+                textBoxDescription.MouseEnter -= textBoxDescription_MouseEnter;
+                textBoxDemand.MouseEnter      -= textBoxDemand_MouseEnter;
                 break;
 
                 case 1: trackBar.Enabled = true;
-                useFilter_button.MouseEnter += useFilter_button_MouseEnter;  // подписка для 'Фильтр'
-                goWalker_button.MouseEnter += goWalker_button_MouseEnter;    // подписка для 'Извлечь'
-                insertDB_button.MouseEnter += insertDB_button_MouseEnter;     // подписка для 'DB'
-                trackBar.MouseEnter += trackBar_MouseEnter;                  // подписка для 'trackBar'
+                useFilter_button.MouseEnter   += useFilter_button_MouseEnter; // подписка для 'Фильтр'
+                goWalker_button.MouseEnter    += goWalker_button_MouseEnter;  // подписка для 'Извлечь'
+                insertDB_button.MouseEnter    += insertDB_button_MouseEnter;  // подписка для 'DB'
+                trackBar.MouseEnter           += trackBar_MouseEnter;         // подписка для 'trackBar'
+                textBoxCompany.MouseEnter     += textBoxCompany_MouseEnter;
+                textBoxProfession.MouseEnter  += textBoxProfession_MouseEnter;
+                textBoxSalary.MouseEnter      += textBoxSalary_MouseEnter;
+                textBoxDescription.MouseEnter += textBoxDescription_MouseEnter;
+                textBoxDemand.MouseEnter      += textBoxDemand_MouseEnter;
                 break;
             }
         }
@@ -100,6 +110,46 @@ namespace Data_Collector
             info.Text = "Установить число просматриваемых страниц?";
         }
         private void trackBar_MouseLeave(object sender, EventArgs e)         // курсор снаружи 'trackBar'
+        {
+            info.Text = "";
+        }
+        private void textBoxCompany_MouseEnter(object sender, EventArgs e)
+        {
+            info.Text = "Компания...";
+        }
+        private void textBoxCompany_MouseLeave(object sender, EventArgs e)
+        {
+            info.Text = "";
+        }
+        private void textBoxProfession_MouseEnter(object sender, EventArgs e)
+        {
+            info.Text = "Должность...";
+        }
+        private void textBoxProfession_MouseLeave(object sender, EventArgs e)
+        {
+            info.Text = "";
+        }
+        private void textBoxSalary_MouseEnter(object sender, EventArgs e)
+        {
+            info.Text = "Зарплата...";
+        }
+        private void textBoxSalary_MouseLeave(object sender, EventArgs e)
+        {
+            info.Text = "";
+        }
+        private void textBoxDescription_MouseEnter(object sender, EventArgs e)
+        {
+            info.Text = "Описание...";
+        }
+        private void textBoxDescription_MouseLeave(object sender, EventArgs e)
+        {
+            info.Text = "";
+        }
+        private void textBoxDemand_MouseEnter(object sender, EventArgs e)
+        {
+            info.Text = "Требования...";
+        }
+        private void textBoxDemand_MouseLeave(object sender, EventArgs e)
         {
             info.Text = "";
         }

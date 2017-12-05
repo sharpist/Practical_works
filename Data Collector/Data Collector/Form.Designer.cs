@@ -388,14 +388,14 @@
             // обновитьToolStripMenuItem
             // 
             this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
-            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.обновитьToolStripMenuItem.Text = "Обновить";
             this.обновитьToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(141, 24);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -417,67 +417,72 @@
             // textBoxCompany
             // 
             this.textBoxCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxCompany.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.textBoxCompany.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxCompany.Location = new System.Drawing.Point(420, 406);
             this.textBoxCompany.MaximumSize = new System.Drawing.Size(312, 26);
             this.textBoxCompany.MinimumSize = new System.Drawing.Size(312, 26);
             this.textBoxCompany.Name = "textBoxCompany";
             this.textBoxCompany.Size = new System.Drawing.Size(312, 26);
             this.textBoxCompany.TabIndex = 9;
-            this.textBoxCompany.Text = "Компания...";
             this.textBoxCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxCompany.MouseEnter += new System.EventHandler(this.textBoxCompany_MouseEnter);
+            this.textBoxCompany.MouseLeave += new System.EventHandler(this.textBoxCompany_MouseLeave);
             // 
             // textBoxProfession
             // 
             this.textBoxProfession.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxProfession.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.textBoxProfession.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxProfession.Location = new System.Drawing.Point(420, 438);
             this.textBoxProfession.MaximumSize = new System.Drawing.Size(312, 26);
             this.textBoxProfession.MinimumSize = new System.Drawing.Size(312, 26);
             this.textBoxProfession.Name = "textBoxProfession";
             this.textBoxProfession.Size = new System.Drawing.Size(312, 26);
             this.textBoxProfession.TabIndex = 10;
-            this.textBoxProfession.Text = "Должность...";
             this.textBoxProfession.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxProfession.MouseEnter += new System.EventHandler(this.textBoxProfession_MouseEnter);
+            this.textBoxProfession.MouseLeave += new System.EventHandler(this.textBoxProfession_MouseLeave);
             // 
             // textBoxSalary
             // 
             this.textBoxSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSalary.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.textBoxSalary.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxSalary.Location = new System.Drawing.Point(420, 470);
             this.textBoxSalary.MaximumSize = new System.Drawing.Size(312, 26);
             this.textBoxSalary.MinimumSize = new System.Drawing.Size(312, 26);
             this.textBoxSalary.Name = "textBoxSalary";
             this.textBoxSalary.Size = new System.Drawing.Size(312, 26);
             this.textBoxSalary.TabIndex = 11;
-            this.textBoxSalary.Text = "Зарплата...";
             this.textBoxSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxSalary.MouseEnter += new System.EventHandler(this.textBoxSalary_MouseEnter);
+            this.textBoxSalary.MouseLeave += new System.EventHandler(this.textBoxSalary_MouseLeave);
             // 
             // textBoxDescription
             // 
             this.textBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxDescription.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.textBoxDescription.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxDescription.Location = new System.Drawing.Point(420, 502);
             this.textBoxDescription.MaximumSize = new System.Drawing.Size(312, 26);
             this.textBoxDescription.MinimumSize = new System.Drawing.Size(312, 26);
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(312, 26);
             this.textBoxDescription.TabIndex = 12;
-            this.textBoxDescription.Text = "Описание...";
             this.textBoxDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxDescription.MouseEnter += new System.EventHandler(this.textBoxDescription_MouseEnter);
+            this.textBoxDescription.MouseLeave += new System.EventHandler(this.textBoxDescription_MouseLeave);
             // 
             // textBoxDemand
             // 
             this.textBoxDemand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxDemand.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.textBoxDemand.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBoxDemand.Location = new System.Drawing.Point(420, 534);
             this.textBoxDemand.MaximumSize = new System.Drawing.Size(312, 26);
             this.textBoxDemand.MinimumSize = new System.Drawing.Size(312, 26);
             this.textBoxDemand.Name = "textBoxDemand";
             this.textBoxDemand.Size = new System.Drawing.Size(312, 26);
             this.textBoxDemand.TabIndex = 13;
-            this.textBoxDemand.Text = "Требования...";
             this.textBoxDemand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxDemand.MouseEnter += new System.EventHandler(this.textBoxDemand_MouseEnter);
+            this.textBoxDemand.MouseLeave += new System.EventHandler(this.textBoxDemand_MouseLeave);
             // 
             // Form
             // 
