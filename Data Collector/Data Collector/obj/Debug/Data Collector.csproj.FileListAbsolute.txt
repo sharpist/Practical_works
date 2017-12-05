@@ -19,3 +19,4 @@ C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collecto
 C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\bin\Debug\DB_log.ldf
 C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\bin\Debug\Data Collector.exe
 C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\bin\Debug\Data Collector.pdb
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\obj\Debug\Data Collector.csprojResolveAssemblyReference.cache

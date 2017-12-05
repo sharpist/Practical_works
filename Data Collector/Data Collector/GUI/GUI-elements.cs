@@ -30,8 +30,7 @@ namespace Data_Collector
         private void setGUI(byte key)
         {
             switch (key) {
-                case 0:
-                textBox.Text = $"Получение данных с веб-ресурса...{Environment.NewLine}Процесс работает в фоновом режиме...";
+                case 0: textBox.Text = $"Получение данных с веб-ресурса...{Environment.NewLine}Процесс работает в фоновом режиме...";
                 trackBar.Enabled = false;
                 useFilter_button.MouseEnter -= useFilter_button_MouseEnter;  // отписка для 'Фильтр'
                 goWalker_button.MouseEnter -= goWalker_button_MouseEnter;    // отписка для 'Извлечь'
@@ -39,9 +38,7 @@ namespace Data_Collector
                 trackBar.MouseEnter -= trackBar_MouseEnter;                  // отписка для 'trackBar'
                 break;
 
-                case 1:
-                textBox.Text = "";
-                trackBar.Enabled = true;
+                case 1: trackBar.Enabled = true;
                 useFilter_button.MouseEnter += useFilter_button_MouseEnter;  // подписка для 'Фильтр'
                 goWalker_button.MouseEnter += goWalker_button_MouseEnter;    // подписка для 'Извлечь'
                 writeDB_button.MouseEnter += writeDB_button_MouseEnter;      // подписка для 'DB'

@@ -31,15 +31,19 @@ namespace Data_Collector
                 profiles.Clear();
 
                 textBox.Text = "";
-                for (ushort i = 0; i < filteredProfiles.Count; i++)
+                if (filteredProfiles != null)
                 {
-                    textBox.Text += filteredProfiles[i].Company     + Environment.NewLine;
-                    textBox.Text += filteredProfiles[i].Profession  + Environment.NewLine;
-                    textBox.Text += filteredProfiles[i].Salary      + Environment.NewLine;
-                    textBox.Text += filteredProfiles[i].Description + Environment.NewLine;
-                    textBox.Text += filteredProfiles[i].Demand      + Environment.NewLine;
-                    textBox.Text +=                                   Environment.NewLine;
+                    for (ushort i = 0; i < filteredProfiles.Count; i++)
+                    {
+                        textBox.Text += filteredProfiles[i].Company + Environment.NewLine;
+                        textBox.Text += filteredProfiles[i].Profession + Environment.NewLine;
+                        textBox.Text += filteredProfiles[i].Salary + Environment.NewLine;
+                        textBox.Text += filteredProfiles[i].Description + Environment.NewLine;
+                        textBox.Text += filteredProfiles[i].Demand + Environment.NewLine;
+                        textBox.Text += Environment.NewLine;
+                    }
                 }
+                else { textBox.Text = "Коллекция filteredProfiles не содержит данные!"; }
             }
 
             else { info.Text = "Данные для фильтра не собраны!"; }

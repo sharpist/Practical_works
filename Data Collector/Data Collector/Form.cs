@@ -42,11 +42,10 @@ namespace Data_Collector
         private async void goWalker_button_Click(object sender, EventArgs e)
         {
             limit = (byte)trackBar.Value;
+            setGUI(0); // GUI disabled
+
             try
             {
-                setGUI(0); // GUI disabled
-
-
                 await getHtmlAsync(0, limit, @"https://job.ru/catalog/production/page/"); // получить HTML страниц
 
                 await parsHtmlPageAsync();                                                // получить ссылки анкет
@@ -57,15 +56,20 @@ namespace Data_Collector
                 await parsHtmlProfileAsync();                                             // получить данные анкет
 
 
-                for (ushort i = 0; i < profiles.Count; i++)
+                textBox.Text = "";
+                if (profiles != null)
                 {
-                    textBox.Text += profiles[i].Company     + Environment.NewLine;
-                    textBox.Text += profiles[i].Profession  + Environment.NewLine;
-                    textBox.Text += profiles[i].Salary      + Environment.NewLine;
-                    textBox.Text += profiles[i].Description + Environment.NewLine;
-                    textBox.Text += profiles[i].Demand      + Environment.NewLine;
-                    textBox.Text +=                           Environment.NewLine;
+                    for (ushort i = 0; i < profiles.Count; i++)
+                    {
+                        textBox.Text += profiles[i].Company + Environment.NewLine;
+                        textBox.Text += profiles[i].Profession + Environment.NewLine;
+                        textBox.Text += profiles[i].Salary + Environment.NewLine;
+                        textBox.Text += profiles[i].Description + Environment.NewLine;
+                        textBox.Text += profiles[i].Demand + Environment.NewLine;
+                        textBox.Text += Environment.NewLine;
+                    }
                 }
+                else { textBox.Text = "Коллекция profiles не содержит данные!"; }
             }
 
             catch (Exception ex)
