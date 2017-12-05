@@ -71,6 +71,10 @@ namespace Data_Collector
             }
             else { textBox.Text = "Заполните все поля!"; }
         }
+        private void recordDB_button_Click(object sender, EventArgs e)
+        {
+
+        }
         private void profileBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();

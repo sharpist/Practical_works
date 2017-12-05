@@ -59,7 +59,8 @@ namespace Data_Collector
                 trackBar.Enabled = false;
                 useFilter_button.MouseEnter   -= useFilter_button_MouseEnter; // отписка для 'Фильтр'
                 goWalker_button.MouseEnter    -= goWalker_button_MouseEnter;  // отписка для 'Извлечь'
-                insertDB_button.MouseEnter    -= insertDB_button_MouseEnter;  // отписка для 'DB'
+                insertDB_button.MouseEnter    -= insertDB_button_MouseEnter;  // отписка для 'Вставить'
+                recordDB_button.MouseEnter    -= recordDB_button_MouseEnter;  // отписка для 'Запись'
                 trackBar.MouseEnter           -= trackBar_MouseEnter;         // отписка для 'trackBar'
                 textBoxCompany.MouseEnter     -= textBoxCompany_MouseEnter;
                 textBoxProfession.MouseEnter  -= textBoxProfession_MouseEnter;
@@ -71,7 +72,8 @@ namespace Data_Collector
                 case 1: trackBar.Enabled = true;
                 useFilter_button.MouseEnter   += useFilter_button_MouseEnter; // подписка для 'Фильтр'
                 goWalker_button.MouseEnter    += goWalker_button_MouseEnter;  // подписка для 'Извлечь'
-                insertDB_button.MouseEnter    += insertDB_button_MouseEnter;  // подписка для 'DB'
+                insertDB_button.MouseEnter    += insertDB_button_MouseEnter;  // подписка для 'Вставить'
+                recordDB_button.MouseEnter    += recordDB_button_MouseEnter;  // отписка для 'Запись'
                 trackBar.MouseEnter           += trackBar_MouseEnter;         // подписка для 'trackBar'
                 textBoxCompany.MouseEnter     += textBoxCompany_MouseEnter;
                 textBoxProfession.MouseEnter  += textBoxProfession_MouseEnter;
@@ -97,11 +99,19 @@ namespace Data_Collector
         {
             info.Text = "";
         }
-        private void insertDB_button_MouseEnter(object sender, EventArgs e)  // курсор внутри 'DB'
+        private void insertDB_button_MouseEnter(object sender, EventArgs e)  // курсор внутри 'Вставить'
         {
-            info.Text = "Сохранить данные?";
+            info.Text = "Добавить введённые данные в DB?";
         }
-        private void insertDB_button_MouseLeave(object sender, EventArgs e)  // курсор снаружи 'DB'
+        private void insertDB_button_MouseLeave(object sender, EventArgs e)  // курсор снаружи 'Вставить'
+        {
+            info.Text = "";
+        }
+        private void recordDB_button_MouseEnter(object sender, EventArgs e)  // курсор внутри 'Запись'
+        {
+            info.Text = "Записать все данные в DB?";
+        }
+        private void recordDB_button_MouseLeave(object sender, EventArgs e)  // курсор снаружи 'Запись'
         {
             info.Text = "";
         }

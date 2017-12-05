@@ -71,6 +71,7 @@
             this.textBoxSalary = new System.Windows.Forms.TextBox();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.textBoxDemand = new System.Windows.Forms.TextBox();
+            this.recordDB_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileBindingNavigator)).BeginInit();
@@ -326,6 +327,7 @@
             // goWalker_button
             // 
             this.goWalker_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.goWalker_button.ForeColor = System.Drawing.SystemColors.WindowText;
             this.goWalker_button.Location = new System.Drawing.Point(420, 623);
             this.goWalker_button.Name = "goWalker_button";
             this.goWalker_button.Size = new System.Drawing.Size(100, 32);
@@ -339,7 +341,7 @@
             // useFilter_button
             // 
             this.useFilter_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.useFilter_button.ForeColor = System.Drawing.Color.Crimson;
+            this.useFilter_button.ForeColor = System.Drawing.SystemColors.Desktop;
             this.useFilter_button.Location = new System.Drawing.Point(526, 623);
             this.useFilter_button.Name = "useFilter_button";
             this.useFilter_button.Size = new System.Drawing.Size(100, 32);
@@ -354,7 +356,7 @@
             // 
             this.insertDB_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.insertDB_button.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.insertDB_button.Location = new System.Drawing.Point(632, 623);
+            this.insertDB_button.Location = new System.Drawing.Point(632, 566);
             this.insertDB_button.Name = "insertDB_button";
             this.insertDB_button.Size = new System.Drawing.Size(100, 32);
             this.insertDB_button.TabIndex = 7;
@@ -484,11 +486,26 @@
             this.textBoxDemand.MouseEnter += new System.EventHandler(this.textBoxDemand_MouseEnter);
             this.textBoxDemand.MouseLeave += new System.EventHandler(this.textBoxDemand_MouseLeave);
             // 
+            // recordDB_button
+            // 
+            this.recordDB_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.recordDB_button.ForeColor = System.Drawing.Color.Crimson;
+            this.recordDB_button.Location = new System.Drawing.Point(632, 623);
+            this.recordDB_button.Name = "recordDB_button";
+            this.recordDB_button.Size = new System.Drawing.Size(100, 32);
+            this.recordDB_button.TabIndex = 14;
+            this.recordDB_button.Text = "Запись";
+            this.recordDB_button.UseVisualStyleBackColor = true;
+            this.recordDB_button.Click += new System.EventHandler(this.recordDB_button_Click);
+            this.recordDB_button.MouseEnter += new System.EventHandler(this.recordDB_button_MouseEnter);
+            this.recordDB_button.MouseLeave += new System.EventHandler(this.recordDB_button_MouseLeave);
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 721);
+            this.Controls.Add(this.recordDB_button);
             this.Controls.Add(this.textBoxDemand);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.textBoxSalary);
@@ -569,6 +586,7 @@
         private System.Windows.Forms.TextBox textBoxSalary;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.TextBox textBoxDemand;
+        private System.Windows.Forms.Button recordDB_button;
     }
 }
 
