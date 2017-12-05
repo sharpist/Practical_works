@@ -59,12 +59,18 @@
             this.info = new System.Windows.Forms.Label();
             this.goWalker_button = new System.Windows.Forms.Button();
             this.useFilter_button = new System.Windows.Forms.Button();
-            this.writeDB_button = new System.Windows.Forms.Button();
+            this.insertDB_button = new System.Windows.Forms.Button();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.обновитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBoxCompany = new System.Windows.Forms.TextBox();
+            this.textBoxProfession = new System.Windows.Forms.TextBox();
+            this.textBoxSalary = new System.Windows.Forms.TextBox();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.textBoxDemand = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileBindingNavigator)).BeginInit();
@@ -231,6 +237,8 @@
             this.dataGridViewTextBoxColumn6});
             this.profileDataGridView.DataSource = this.profileBindingSource;
             this.profileDataGridView.Location = new System.Drawing.Point(12, 55);
+            this.profileDataGridView.MaximumSize = new System.Drawing.Size(720, 320);
+            this.profileDataGridView.MinimumSize = new System.Drawing.Size(720, 320);
             this.profileDataGridView.Name = "profileDataGridView";
             this.profileDataGridView.Size = new System.Drawing.Size(720, 320);
             this.profileDataGridView.TabIndex = 1;
@@ -276,23 +284,23 @@
             // 
             this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox.Location = new System.Drawing.Point(12, 406);
-            this.textBox.MaximumSize = new System.Drawing.Size(400, 200);
+            this.textBox.MaximumSize = new System.Drawing.Size(400, 300);
             this.textBox.MaxLength = 50000;
-            this.textBox.MinimumSize = new System.Drawing.Size(400, 200);
+            this.textBox.MinimumSize = new System.Drawing.Size(400, 300);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
             this.textBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox.Size = new System.Drawing.Size(400, 200);
+            this.textBox.Size = new System.Drawing.Size(400, 300);
             this.textBox.TabIndex = 2;
             // 
             // trackBar
             // 
             this.trackBar.LargeChange = 2;
-            this.trackBar.Location = new System.Drawing.Point(642, 561);
+            this.trackBar.Location = new System.Drawing.Point(420, 661);
             this.trackBar.Maximum = 50;
             this.trackBar.Minimum = 2;
             this.trackBar.Name = "trackBar";
-            this.trackBar.Size = new System.Drawing.Size(90, 45);
+            this.trackBar.Size = new System.Drawing.Size(312, 45);
             this.trackBar.SmallChange = 2;
             this.trackBar.TabIndex = 2;
             this.trackBar.TickFrequency = 2;
@@ -318,11 +326,11 @@
             // goWalker_button
             // 
             this.goWalker_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.goWalker_button.Location = new System.Drawing.Point(642, 406);
+            this.goWalker_button.Location = new System.Drawing.Point(420, 623);
             this.goWalker_button.Name = "goWalker_button";
-            this.goWalker_button.Size = new System.Drawing.Size(90, 32);
+            this.goWalker_button.Size = new System.Drawing.Size(100, 32);
             this.goWalker_button.TabIndex = 5;
-            this.goWalker_button.Text = "Извлечь";
+            this.goWalker_button.Text = "www";
             this.goWalker_button.UseVisualStyleBackColor = true;
             this.goWalker_button.Click += new System.EventHandler(this.goWalker_button_Click);
             this.goWalker_button.MouseEnter += new System.EventHandler(this.goWalker_button_MouseEnter);
@@ -332,9 +340,9 @@
             // 
             this.useFilter_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.useFilter_button.ForeColor = System.Drawing.Color.Crimson;
-            this.useFilter_button.Location = new System.Drawing.Point(642, 457);
+            this.useFilter_button.Location = new System.Drawing.Point(526, 623);
             this.useFilter_button.Name = "useFilter_button";
-            this.useFilter_button.Size = new System.Drawing.Size(90, 32);
+            this.useFilter_button.Size = new System.Drawing.Size(100, 32);
             this.useFilter_button.TabIndex = 6;
             this.useFilter_button.Text = "Фильтр";
             this.useFilter_button.UseVisualStyleBackColor = true;
@@ -342,19 +350,19 @@
             this.useFilter_button.MouseEnter += new System.EventHandler(this.useFilter_button_MouseEnter);
             this.useFilter_button.MouseLeave += new System.EventHandler(this.useFilter_button_MouseLeave);
             // 
-            // writeDB_button
+            // insertDB_button
             // 
-            this.writeDB_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.writeDB_button.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.writeDB_button.Location = new System.Drawing.Point(642, 507);
-            this.writeDB_button.Name = "writeDB_button";
-            this.writeDB_button.Size = new System.Drawing.Size(90, 32);
-            this.writeDB_button.TabIndex = 7;
-            this.writeDB_button.Text = "DB";
-            this.writeDB_button.UseVisualStyleBackColor = true;
-            this.writeDB_button.Click += new System.EventHandler(this.writeDB_button_Click);
-            this.writeDB_button.MouseEnter += new System.EventHandler(this.writeDB_button_MouseEnter);
-            this.writeDB_button.MouseLeave += new System.EventHandler(this.writeDB_button_MouseLeave);
+            this.insertDB_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.insertDB_button.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.insertDB_button.Location = new System.Drawing.Point(632, 623);
+            this.insertDB_button.Name = "insertDB_button";
+            this.insertDB_button.Size = new System.Drawing.Size(100, 32);
+            this.insertDB_button.TabIndex = 7;
+            this.insertDB_button.Text = "Вставить";
+            this.insertDB_button.UseVisualStyleBackColor = true;
+            this.insertDB_button.Click += new System.EventHandler(this.insertDB_button_Click);
+            this.insertDB_button.MouseEnter += new System.EventHandler(this.insertDB_button_MouseEnter);
+            this.insertDB_button.MouseLeave += new System.EventHandler(this.insertDB_button_MouseLeave);
             // 
             // menuStrip
             // 
@@ -371,15 +379,23 @@
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.обновитьToolStripMenuItem,
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(53, 23);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
+            // обновитьToolStripMenuItem
+            // 
+            this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
+            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.обновитьToolStripMenuItem.Text = "Обновить";
+            this.обновитьToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -398,12 +414,82 @@
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // textBoxCompany
+            // 
+            this.textBoxCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxCompany.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.textBoxCompany.Location = new System.Drawing.Point(420, 406);
+            this.textBoxCompany.MaximumSize = new System.Drawing.Size(312, 26);
+            this.textBoxCompany.MinimumSize = new System.Drawing.Size(312, 26);
+            this.textBoxCompany.Name = "textBoxCompany";
+            this.textBoxCompany.Size = new System.Drawing.Size(312, 26);
+            this.textBoxCompany.TabIndex = 9;
+            this.textBoxCompany.Text = "Компания...";
+            this.textBoxCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxProfession
+            // 
+            this.textBoxProfession.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxProfession.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.textBoxProfession.Location = new System.Drawing.Point(420, 438);
+            this.textBoxProfession.MaximumSize = new System.Drawing.Size(312, 26);
+            this.textBoxProfession.MinimumSize = new System.Drawing.Size(312, 26);
+            this.textBoxProfession.Name = "textBoxProfession";
+            this.textBoxProfession.Size = new System.Drawing.Size(312, 26);
+            this.textBoxProfession.TabIndex = 10;
+            this.textBoxProfession.Text = "Должность...";
+            this.textBoxProfession.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxSalary
+            // 
+            this.textBoxSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSalary.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.textBoxSalary.Location = new System.Drawing.Point(420, 470);
+            this.textBoxSalary.MaximumSize = new System.Drawing.Size(312, 26);
+            this.textBoxSalary.MinimumSize = new System.Drawing.Size(312, 26);
+            this.textBoxSalary.Name = "textBoxSalary";
+            this.textBoxSalary.Size = new System.Drawing.Size(312, 26);
+            this.textBoxSalary.TabIndex = 11;
+            this.textBoxSalary.Text = "Зарплата...";
+            this.textBoxSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxDescription
+            // 
+            this.textBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxDescription.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.textBoxDescription.Location = new System.Drawing.Point(420, 502);
+            this.textBoxDescription.MaximumSize = new System.Drawing.Size(312, 26);
+            this.textBoxDescription.MinimumSize = new System.Drawing.Size(312, 26);
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.Size = new System.Drawing.Size(312, 26);
+            this.textBoxDescription.TabIndex = 12;
+            this.textBoxDescription.Text = "Описание...";
+            this.textBoxDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBoxDemand
+            // 
+            this.textBoxDemand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxDemand.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.textBoxDemand.Location = new System.Drawing.Point(420, 534);
+            this.textBoxDemand.MaximumSize = new System.Drawing.Size(312, 26);
+            this.textBoxDemand.MinimumSize = new System.Drawing.Size(312, 26);
+            this.textBoxDemand.Name = "textBoxDemand";
+            this.textBoxDemand.Size = new System.Drawing.Size(312, 26);
+            this.textBoxDemand.TabIndex = 13;
+            this.textBoxDemand.Text = "Требования...";
+            this.textBoxDemand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 621);
-            this.Controls.Add(this.writeDB_button);
+            this.ClientSize = new System.Drawing.Size(744, 721);
+            this.Controls.Add(this.textBoxDemand);
+            this.Controls.Add(this.textBoxDescription);
+            this.Controls.Add(this.textBoxSalary);
+            this.Controls.Add(this.textBoxProfession);
+            this.Controls.Add(this.textBoxCompany);
+            this.Controls.Add(this.insertDB_button);
             this.Controls.Add(this.useFilter_button);
             this.Controls.Add(this.goWalker_button);
             this.Controls.Add(this.info);
@@ -415,6 +501,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(760, 760);
+            this.MinimumSize = new System.Drawing.Size(760, 760);
             this.Name = "Form";
             this.Text = "Data Collector";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
@@ -464,12 +552,18 @@
         private System.Windows.Forms.Label info;
         private System.Windows.Forms.Button goWalker_button;
         private System.Windows.Forms.Button useFilter_button;
-        private System.Windows.Forms.Button writeDB_button;
+        private System.Windows.Forms.Button insertDB_button;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem обновитьToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBoxCompany;
+        private System.Windows.Forms.TextBox textBoxProfession;
+        private System.Windows.Forms.TextBox textBoxSalary;
+        private System.Windows.Forms.TextBox textBoxDescription;
+        private System.Windows.Forms.TextBox textBoxDemand;
     }
 }
 

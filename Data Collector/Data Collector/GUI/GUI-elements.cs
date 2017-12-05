@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Data_Collector
@@ -18,6 +19,30 @@ namespace Data_Collector
         {
             if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed) { sqlConnection.Close(); }
         }
+        private async void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBox.Text = "";
+            SqlDataReader sqlReader = null;  // получить таблицу в табличном представлении
+            // запрос к DB                         инструкция запрос         соединение
+            SqlCommand command = new SqlCommand("SELECT * FROM [Profile]", sqlConnection); // (*) считывать все колонки во всех строках
+
+
+            try
+            {
+                // метод ExecuteReader выполняет комманды, возвращающие табличные представления (данные)
+                sqlReader = await command.ExecuteReaderAsync();
+
+                while (await sqlReader.ReadAsync())
+                {
+                    textBox.Text += Convert.ToString(sqlReader["Id"]) + "  " + Convert.ToString(sqlReader["Company"]) + "  " + Convert.ToString(sqlReader["Profession"]) + "  " + Convert.ToString(sqlReader["Salary"]);
+                }
+            }
+
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            finally
+            { if (sqlReader != null) sqlReader.Close(); }
+        }
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed) { sqlConnection.Close(); }
@@ -34,14 +59,14 @@ namespace Data_Collector
                 trackBar.Enabled = false;
                 useFilter_button.MouseEnter -= useFilter_button_MouseEnter;  // отписка для 'Фильтр'
                 goWalker_button.MouseEnter -= goWalker_button_MouseEnter;    // отписка для 'Извлечь'
-                writeDB_button.MouseEnter -= writeDB_button_MouseEnter;      // отписка для 'DB'
+                insertDB_button.MouseEnter -= insertDB_button_MouseEnter;     // отписка для 'DB'
                 trackBar.MouseEnter -= trackBar_MouseEnter;                  // отписка для 'trackBar'
                 break;
 
                 case 1: trackBar.Enabled = true;
                 useFilter_button.MouseEnter += useFilter_button_MouseEnter;  // подписка для 'Фильтр'
                 goWalker_button.MouseEnter += goWalker_button_MouseEnter;    // подписка для 'Извлечь'
-                writeDB_button.MouseEnter += writeDB_button_MouseEnter;      // подписка для 'DB'
+                insertDB_button.MouseEnter += insertDB_button_MouseEnter;     // подписка для 'DB'
                 trackBar.MouseEnter += trackBar_MouseEnter;                  // подписка для 'trackBar'
                 break;
             }
@@ -62,11 +87,11 @@ namespace Data_Collector
         {
             info.Text = "";
         }
-        private void writeDB_button_MouseEnter(object sender, EventArgs e)   // курсор внутри 'DB'
+        private void insertDB_button_MouseEnter(object sender, EventArgs e)  // курсор внутри 'DB'
         {
             info.Text = "Сохранить данные?";
         }
-        private void writeDB_button_MouseLeave(object sender, EventArgs e)   // курсор снаружи 'DB'
+        private void insertDB_button_MouseLeave(object sender, EventArgs e)  // курсор снаружи 'DB'
         {
             info.Text = "";
         }

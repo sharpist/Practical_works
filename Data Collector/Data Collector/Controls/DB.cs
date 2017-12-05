@@ -31,7 +31,12 @@ namespace Data_Collector
 
                 while (await sqlReader.ReadAsync())
                 {
-                    textBox.Text += Convert.ToString(sqlReader["Id"]) + " " + Convert.ToString(sqlReader["Company"]) + " " + Convert.ToString(sqlReader["Profession"]) + " " + Convert.ToString(sqlReader["Salary"]);
+                    textBox.Text += Convert.ToString(sqlReader["Id"])          + "  " +
+                                    Convert.ToString(sqlReader["Company"])     + "  " +
+                                    Convert.ToString(sqlReader["Profession"])  + "  " +
+                                    Convert.ToString(sqlReader["Salary"])      + "  " +
+                                    Convert.ToString(sqlReader["Description"]) + "  " +
+                                    Convert.ToString(sqlReader["Demand"])      + Environment.NewLine;
                 }
             }
 
@@ -44,9 +49,27 @@ namespace Data_Collector
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dBDataSet.Profile". При необходимости она может быть перемещена или удалена.
             this.profileTableAdapter.Fill(this.dBDataSet.Profile);
         }
-        private void writeDB_button_Click(object sender, EventArgs e)
+        private async void insertDB_button_Click(object sender, EventArgs e)
         {
-            //TODO: работа с базой
+            if (!string.IsNullOrEmpty(textBoxCompany.Text)     && !string.IsNullOrWhiteSpace(textBoxCompany.Text)     &&
+                !string.IsNullOrEmpty(textBoxProfession.Text)  && !string.IsNullOrWhiteSpace(textBoxProfession.Text)  &&
+                !string.IsNullOrEmpty(textBoxSalary.Text)      && !string.IsNullOrWhiteSpace(textBoxSalary.Text)      &&
+                !string.IsNullOrEmpty(textBoxDescription.Text) && !string.IsNullOrWhiteSpace(textBoxDescription.Text) &&
+                !string.IsNullOrEmpty(textBoxDemand.Text)      && !string.IsNullOrWhiteSpace(textBoxDemand.Text))
+            {
+                //                                                                       наименование колонок                                           ключи
+                SqlCommand command = new SqlCommand("INSERT INTO [Profile] (Company, Profession, Salary, Description, Demand)VALUES(@Company, @Profession, @Salary, @Description, @Demand)", sqlConnection);
+                //                                ключ            значение
+                command.Parameters.AddWithValue("Company",     textBoxCompany.Text);
+                command.Parameters.AddWithValue("Profession",  textBoxProfession.Text);
+                command.Parameters.AddWithValue("Salary",      textBoxSalary.Text);
+                command.Parameters.AddWithValue("Description", textBoxDescription.Text);
+                command.Parameters.AddWithValue("Demand",      textBoxDemand.Text);
+
+                // выполнить команды INSERT
+                await command.ExecuteNonQueryAsync();
+            }
+            else { textBox.Text = "Коллекция profiles не содержит данные!"; }
         }
         private void profileBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {

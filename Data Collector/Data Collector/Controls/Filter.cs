@@ -28,7 +28,7 @@ namespace Data_Collector
                         double.Parse(profile.Salary) >= min)
                         filteredProfiles.Add(profile);
                 }
-                profiles.Clear();
+                //profiles.Clear();
 
                 textBox.Text = "";
                 if (filteredProfiles != null)
@@ -46,7 +46,7 @@ namespace Data_Collector
                 else { textBox.Text = "Коллекция filteredProfiles не содержит данные!"; }
             }
 
-            else { info.Text = "Данные для фильтра не собраны!"; }
+            else { textBox.Text = "Данные для фильтра не собраны!"; }
         }
     }
 }
