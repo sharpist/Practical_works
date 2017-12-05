@@ -13,8 +13,8 @@ namespace Data_Collector
         private async void Form_Load(object sender, EventArgs e)
         {
             // подготовить адрес
-            string dirName = System.IO.Directory.GetCurrentDirectory(), myDB = dirName + "\\DB.mdf";
-            connectionString = "Data Source=" + myDB;
+            string dirName = System.IO.Directory.GetCurrentDirectory(), myDB = dirName + @"\DB.mdf";
+            connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + myDB;
 
             sqlConnection = new SqlConnection(connectionString);
             await sqlConnection.OpenAsync(); // открываем соединение с DB
