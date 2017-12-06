@@ -122,27 +122,29 @@ namespace Data_Collector
         private void finderDB_button_Click(object sender, EventArgs e)
         {
             textBox.Text = "";
-            try
+
+            if (!string.IsNullOrEmpty(textBoxSalary.Text) &&
+                !string.IsNullOrWhiteSpace(textBoxSalary.Text))
             {
-                if (!string.IsNullOrEmpty(textBoxSalary.Text) &&
-                    !string.IsNullOrWhiteSpace(textBoxSalary.Text))
+                SqlDataReader sqlReader = null;
+                try
                 {
                     foreach (char c in textBoxSalary.Text)
                     { if (!Char.IsNumber(c)) throw new Exception("Неверные данные!"); }
 
-
-                    var query = from p in dBDataSet.Profile
-                                where int.Parse(p.Salary) == int.Parse(textBoxCompany.Text)
-                                orderby p
-                                select new { p.Company, p.Profession };
-                    foreach (var q in query)
+                    SqlCommand command= sqlConnection.CreateCommand();
+                    command.CommandText = $"select Company, Profession FROM [Profile] where Salary = '{textBoxSalary.Text}' ";
+                    sqlReader = command.ExecuteReader();
+                    while (sqlReader.Read())
                     {
-                        textBox.Text += $"Компания: {q.Company}" + "\t" + $"Профессия: {q.Profession}" + Environment.NewLine;
+                        textBox.Text += $"Компания: {sqlReader["Company"].ToString()}" + "\t" + $"Профессия: {sqlReader["Profession"].ToString()}" + Environment.NewLine;
+                        textBox.Text += Environment.NewLine;
                     }
                 }
-                else { textBox.Text = "Неверные данные!"; }
+                catch (Exception ex) { textBox.Text = ex.Message; }
+                finally { sqlReader.Close(); }
             }
-            catch (Exception ex) { textBox.Text = ex.Message; }
+            else { textBox.Text = "Неверные данные!"; }
         }
         private void profileBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
