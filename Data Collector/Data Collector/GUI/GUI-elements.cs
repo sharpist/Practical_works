@@ -62,6 +62,7 @@ namespace Data_Collector
                 insertDB_button.MouseEnter    -= insertDB_button_MouseEnter;  // отписка для 'Вставить'
                 recordDB_button.MouseEnter    -= recordDB_button_MouseEnter;  // отписка для 'Запись'
                 delDB_button.MouseEnter       -= delDB_button_MouseEnter;     // отписка для 'Удалить'
+                finderDB_button.MouseEnter    -= finderDB_button_MouseEnter;  // отписка для '?'
                 trackBar.MouseEnter           -= trackBar_MouseEnter;         // отписка для 'trackBar'
                 textBoxCompany.MouseEnter     -= textBoxCompany_MouseEnter;
                 textBoxProfession.MouseEnter  -= textBoxProfession_MouseEnter;
@@ -76,6 +77,7 @@ namespace Data_Collector
                 insertDB_button.MouseEnter    += insertDB_button_MouseEnter;  // подписка для 'Вставить'
                 recordDB_button.MouseEnter    += recordDB_button_MouseEnter;  // подписка для 'Запись'
                 delDB_button.MouseEnter       += delDB_button_MouseEnter;     // подписка для 'Удалить'
+                finderDB_button.MouseEnter    += finderDB_button_MouseEnter;  // подписка для '?'
                 trackBar.MouseEnter           += trackBar_MouseEnter;         // подписка для 'trackBar'
                 textBoxCompany.MouseEnter     += textBoxCompany_MouseEnter;
                 textBoxProfession.MouseEnter  += textBoxProfession_MouseEnter;
@@ -122,6 +124,14 @@ namespace Data_Collector
             info.Text = "Для удаления строки выберите лежащую в ней ячейку.";
         }
         private void delDB_button_MouseLeave(object sender, EventArgs e)     // курсор снаружи 'Удалить'
+        {
+            info.Text = "";
+        }
+        private void finderDB_button_MouseEnter(object sender, EventArgs e)  // курсор внутри '?'
+        {
+            info.Text = "Произвести выборку по значению 'Зарплата'?";
+        }
+        private void finderDB_button_MouseLeave(object sender, EventArgs e)  // курсор снаружи '?'
         {
             info.Text = "";
         }

@@ -60,6 +60,7 @@
             this.textBoxDemand = new System.Windows.Forms.TextBox();
             this.recordDB_button = new System.Windows.Forms.Button();
             this.delDB_button = new System.Windows.Forms.Button();
+            this.finderDB_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profileDataGridView)).BeginInit();
@@ -283,11 +284,11 @@
             // 
             this.textBoxCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxCompany.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxCompany.Location = new System.Drawing.Point(420, 406);
-            this.textBoxCompany.MaximumSize = new System.Drawing.Size(312, 26);
-            this.textBoxCompany.MinimumSize = new System.Drawing.Size(312, 26);
+            this.textBoxCompany.Location = new System.Drawing.Point(526, 406);
+            this.textBoxCompany.MaximumSize = new System.Drawing.Size(206, 26);
+            this.textBoxCompany.MinimumSize = new System.Drawing.Size(206, 26);
             this.textBoxCompany.Name = "textBoxCompany";
-            this.textBoxCompany.Size = new System.Drawing.Size(312, 26);
+            this.textBoxCompany.Size = new System.Drawing.Size(206, 26);
             this.textBoxCompany.TabIndex = 9;
             this.textBoxCompany.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxCompany.MouseEnter += new System.EventHandler(this.textBoxCompany_MouseEnter);
@@ -297,11 +298,11 @@
             // 
             this.textBoxProfession.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxProfession.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxProfession.Location = new System.Drawing.Point(420, 438);
-            this.textBoxProfession.MaximumSize = new System.Drawing.Size(312, 26);
-            this.textBoxProfession.MinimumSize = new System.Drawing.Size(312, 26);
+            this.textBoxProfession.Location = new System.Drawing.Point(526, 438);
+            this.textBoxProfession.MaximumSize = new System.Drawing.Size(206, 26);
+            this.textBoxProfession.MinimumSize = new System.Drawing.Size(206, 26);
             this.textBoxProfession.Name = "textBoxProfession";
-            this.textBoxProfession.Size = new System.Drawing.Size(312, 26);
+            this.textBoxProfession.Size = new System.Drawing.Size(206, 26);
             this.textBoxProfession.TabIndex = 10;
             this.textBoxProfession.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxProfession.MouseEnter += new System.EventHandler(this.textBoxProfession_MouseEnter);
@@ -311,11 +312,11 @@
             // 
             this.textBoxSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxSalary.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxSalary.Location = new System.Drawing.Point(420, 470);
-            this.textBoxSalary.MaximumSize = new System.Drawing.Size(312, 26);
-            this.textBoxSalary.MinimumSize = new System.Drawing.Size(312, 26);
+            this.textBoxSalary.Location = new System.Drawing.Point(526, 470);
+            this.textBoxSalary.MaximumSize = new System.Drawing.Size(206, 26);
+            this.textBoxSalary.MinimumSize = new System.Drawing.Size(206, 26);
             this.textBoxSalary.Name = "textBoxSalary";
-            this.textBoxSalary.Size = new System.Drawing.Size(312, 26);
+            this.textBoxSalary.Size = new System.Drawing.Size(206, 26);
             this.textBoxSalary.TabIndex = 11;
             this.textBoxSalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxSalary.MouseEnter += new System.EventHandler(this.textBoxSalary_MouseEnter);
@@ -325,11 +326,11 @@
             // 
             this.textBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxDescription.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxDescription.Location = new System.Drawing.Point(420, 502);
-            this.textBoxDescription.MaximumSize = new System.Drawing.Size(312, 26);
-            this.textBoxDescription.MinimumSize = new System.Drawing.Size(312, 26);
+            this.textBoxDescription.Location = new System.Drawing.Point(526, 502);
+            this.textBoxDescription.MaximumSize = new System.Drawing.Size(206, 26);
+            this.textBoxDescription.MinimumSize = new System.Drawing.Size(206, 26);
             this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(312, 26);
+            this.textBoxDescription.Size = new System.Drawing.Size(206, 26);
             this.textBoxDescription.TabIndex = 12;
             this.textBoxDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxDescription.MouseEnter += new System.EventHandler(this.textBoxDescription_MouseEnter);
@@ -339,11 +340,11 @@
             // 
             this.textBoxDemand.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxDemand.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxDemand.Location = new System.Drawing.Point(420, 534);
-            this.textBoxDemand.MaximumSize = new System.Drawing.Size(312, 26);
-            this.textBoxDemand.MinimumSize = new System.Drawing.Size(312, 26);
+            this.textBoxDemand.Location = new System.Drawing.Point(526, 534);
+            this.textBoxDemand.MaximumSize = new System.Drawing.Size(206, 26);
+            this.textBoxDemand.MinimumSize = new System.Drawing.Size(206, 26);
             this.textBoxDemand.Name = "textBoxDemand";
-            this.textBoxDemand.Size = new System.Drawing.Size(312, 26);
+            this.textBoxDemand.Size = new System.Drawing.Size(206, 26);
             this.textBoxDemand.TabIndex = 13;
             this.textBoxDemand.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxDemand.MouseEnter += new System.EventHandler(this.textBoxDemand_MouseEnter);
@@ -377,11 +378,26 @@
             this.delDB_button.MouseEnter += new System.EventHandler(this.delDB_button_MouseEnter);
             this.delDB_button.MouseLeave += new System.EventHandler(this.delDB_button_MouseLeave);
             // 
+            // finderDB_button
+            // 
+            this.finderDB_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.finderDB_button.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.finderDB_button.Location = new System.Drawing.Point(488, 467);
+            this.finderDB_button.Name = "finderDB_button";
+            this.finderDB_button.Size = new System.Drawing.Size(32, 32);
+            this.finderDB_button.TabIndex = 16;
+            this.finderDB_button.Text = "?";
+            this.finderDB_button.UseVisualStyleBackColor = true;
+            this.finderDB_button.Click += new System.EventHandler(this.finderDB_button_Click);
+            this.finderDB_button.MouseEnter += new System.EventHandler(this.finderDB_button_MouseEnter);
+            this.finderDB_button.MouseLeave += new System.EventHandler(this.finderDB_button_MouseLeave);
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 721);
+            this.Controls.Add(this.finderDB_button);
             this.Controls.Add(this.delDB_button);
             this.Controls.Add(this.recordDB_button);
             this.Controls.Add(this.textBoxDemand);
@@ -449,6 +465,7 @@
         private System.Windows.Forms.TextBox textBoxDemand;
         private System.Windows.Forms.Button recordDB_button;
         private System.Windows.Forms.Button delDB_button;
+        private System.Windows.Forms.Button finderDB_button;
     }
 }
 

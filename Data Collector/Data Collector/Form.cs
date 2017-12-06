@@ -61,12 +61,11 @@ namespace Data_Collector
                 textBox.Text = "";
                 for (ushort i = 0; i < profiles.Count; i++)
                 {
-                    textBox.Text += profiles[i].Company     + Environment.NewLine;
-                    textBox.Text += profiles[i].Profession  + Environment.NewLine;
-                    textBox.Text += profiles[i].Salary      + Environment.NewLine;
-                    textBox.Text += profiles[i].Description + Environment.NewLine;
-                    textBox.Text += profiles[i].Demand      + Environment.NewLine;
-                    textBox.Text +=                           Environment.NewLine;
+                    textBox.Text += $"Компания: {profiles[i].Company}" + "\t" + $"Профессия: {profiles[i].Profession}" + Environment.NewLine;
+                    textBox.Text += $"Зарплата: {profiles[i].Salary}" + Environment.NewLine;
+                    textBox.Text += profiles[i].Description           + Environment.NewLine;
+                    textBox.Text += profiles[i].Demand                + Environment.NewLine;
+                    textBox.Text +=                                     Environment.NewLine;
                 }
             }
 

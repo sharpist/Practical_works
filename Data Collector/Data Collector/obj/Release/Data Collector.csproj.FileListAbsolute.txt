@@ -1,0 +1,10 @@
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\bin\Release\Data Collector.exe.config
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\obj\Release\Data_Collector.Form.resources
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\obj\Release\Data_Collector.Properties.Resources.resources
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\obj\Release\Data Collector.csproj.GenerateResource.Cache
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\bin\Release\DB.mdf
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\bin\Release\DB_log.ldf
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\bin\Release\Data Collector.exe
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\bin\Release\Data Collector.pdb
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\obj\Release\Data Collector.exe
+C:\Users\Alexander\Documents\GitHub\Practical_works\Data Collector\Data Collector\obj\Release\Data Collector.pdb

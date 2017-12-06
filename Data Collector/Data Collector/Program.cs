@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Data_Collector
@@ -13,6 +12,17 @@ namespace Data_Collector
         [STAThread]
         static void Main()
         {
+
+#if DEBUG == false // в режиме DEBUG код не будет вкл. в собираемые сборки RELEASE
+            // указываем путь к DB после установки программы
+            String dbPathMyDocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            //String dbPathAppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            String dbPath = Path.Combine(dbPathMyDocs, "Data CollectorDB");
+            // переопределение значения переменной DataDirectory
+            AppDomain.CurrentDomain.SetData("DataDirectory", dbPath);
+#endif
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form());

@@ -35,12 +35,11 @@ namespace Data_Collector
                 textBox.Text = "";
                 for (ushort i = 0; i < filteredProfiles.Count; i++)
                 {
-                    textBox.Text += filteredProfiles[i].Company     + Environment.NewLine;
-                    textBox.Text += filteredProfiles[i].Profession  + Environment.NewLine;
-                    textBox.Text += filteredProfiles[i].Salary      + Environment.NewLine;
-                    textBox.Text += filteredProfiles[i].Description + Environment.NewLine;
-                    textBox.Text += filteredProfiles[i].Demand      + Environment.NewLine;
-                    textBox.Text +=                                   Environment.NewLine;
+                    textBox.Text += $"Компания: {filteredProfiles[i].Company}" + "\t" + $"Профессия: {filteredProfiles[i].Profession}" + Environment.NewLine;
+                    textBox.Text += $"Зарплата: {filteredProfiles[i].Salary}" + Environment.NewLine;
+                    textBox.Text += filteredProfiles[i].Description           + Environment.NewLine;
+                    textBox.Text += filteredProfiles[i].Demand                + Environment.NewLine;
+                    textBox.Text +=                                             Environment.NewLine;
                 }
             }
 

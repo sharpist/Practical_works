@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -116,6 +117,31 @@ namespace Data_Collector
             try
             { profileDataGridView.Rows.RemoveAt(profileDataGridView.CurrentCell.RowIndex); }
             catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+        private void finderDB_button_Click(object sender, EventArgs e)
+        {
+            textBox.Text = "";
+            try
+            {
+                if (!string.IsNullOrEmpty(textBoxSalary.Text) &&
+                    !string.IsNullOrWhiteSpace(textBoxSalary.Text))
+                {
+                    foreach (char c in textBoxSalary.Text)
+                    { if (!Char.IsNumber(c)) throw new Exception("Неверные данные!"); }
+
+
+                    var query = from p in dBDataSet.Profile
+                                where int.Parse(p.Salary) == int.Parse(textBoxCompany.Text)
+                                orderby p
+                                select new { p.Company, p.Profession };
+                    foreach (var q in query)
+                    {
+                        textBox.Text += $"Компания: {q.Company}" + "\t" + $"Профессия: {q.Profession}" + Environment.NewLine;
+                    }
+                }
+                else { textBox.Text = "Неверные данные!"; }
+            }
+            catch (Exception ex) { textBox.Text = ex.Message; }
         }
         private void profileBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
