@@ -68,12 +68,54 @@ namespace Data_Collector
 
                 // выполнить команды INSERT
                 await command.ExecuteNonQueryAsync();
+
+                this.profileTableAdapter.Fill(this.dBDataSet.Profile);
             }
             else { textBox.Text = "Заполните все поля!"; }
         }
         private void recordDB_button_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (profiles.Count != 0 || filteredProfiles.Count != 0)
+                {
+                    switch (sign) {
+                        case true:
+                        for (ushort i = 0; i < profiles.Count; i++)
+                        {
+                            this.profileTableAdapter.Insert(profiles[i].Company,
+                                                            profiles[i].Profession,
+                                                            profiles[i].Salary,
+                                                            profiles[i].Description,
+                                                            profiles[i].Demand);
 
+                            this.profileTableAdapter.Fill(this.dBDataSet.Profile);
+                        }
+                        break;
+
+                        case false:
+                        for (ushort i = 0; i < filteredProfiles.Count; i++)
+                        {
+                            this.profileTableAdapter.Insert(filteredProfiles[i].Company,
+                                                            filteredProfiles[i].Profession,
+                                                            filteredProfiles[i].Salary,
+                                                            filteredProfiles[i].Description,
+                                                            filteredProfiles[i].Demand);
+
+                            this.profileTableAdapter.Fill(this.dBDataSet.Profile);
+                        }
+                        break;
+                    }
+                }
+                else { textBox.Text = "Отсутствуют захваченные данные к записи!"; }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+        private void delDB_button_Click(object sender, EventArgs e)
+        {
+            try
+            { profileDataGridView.Rows.RemoveAt(profileDataGridView.CurrentCell.RowIndex); }
+            catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         private void profileBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {

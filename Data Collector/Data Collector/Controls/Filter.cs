@@ -10,6 +10,8 @@ namespace Data_Collector
         {
             if (profiles.Count != 0)
             {
+                sign = false;
+
                 // отбросить некорректные данные
                 IEnumerable<Profile> selection = from Profile profile in profiles
                                                  where profile.Salary != "з/п не указана"
@@ -31,19 +33,15 @@ namespace Data_Collector
                 //profiles.Clear();
 
                 textBox.Text = "";
-                if (filteredProfiles != null)
+                for (ushort i = 0; i < filteredProfiles.Count; i++)
                 {
-                    for (ushort i = 0; i < filteredProfiles.Count; i++)
-                    {
-                        textBox.Text += filteredProfiles[i].Company     + Environment.NewLine;
-                        textBox.Text += filteredProfiles[i].Profession  + Environment.NewLine;
-                        textBox.Text += filteredProfiles[i].Salary      + Environment.NewLine;
-                        textBox.Text += filteredProfiles[i].Description + Environment.NewLine;
-                        textBox.Text += filteredProfiles[i].Demand      + Environment.NewLine;
-                        textBox.Text +=                                   Environment.NewLine;
-                    }
+                    textBox.Text += filteredProfiles[i].Company     + Environment.NewLine;
+                    textBox.Text += filteredProfiles[i].Profession  + Environment.NewLine;
+                    textBox.Text += filteredProfiles[i].Salary      + Environment.NewLine;
+                    textBox.Text += filteredProfiles[i].Description + Environment.NewLine;
+                    textBox.Text += filteredProfiles[i].Demand      + Environment.NewLine;
+                    textBox.Text +=                                   Environment.NewLine;
                 }
-                else { textBox.Text = "Коллекция filteredProfiles не содержит данные!"; }
             }
 
             else { textBox.Text = "Данные для фильтра не собраны!"; }

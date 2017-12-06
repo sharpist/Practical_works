@@ -61,6 +61,7 @@ namespace Data_Collector
                 goWalker_button.MouseEnter    -= goWalker_button_MouseEnter;  // отписка для 'Извлечь'
                 insertDB_button.MouseEnter    -= insertDB_button_MouseEnter;  // отписка для 'Вставить'
                 recordDB_button.MouseEnter    -= recordDB_button_MouseEnter;  // отписка для 'Запись'
+                delDB_button.MouseEnter       -= delDB_button_MouseEnter;     // отписка для 'Удалить'
                 trackBar.MouseEnter           -= trackBar_MouseEnter;         // отписка для 'trackBar'
                 textBoxCompany.MouseEnter     -= textBoxCompany_MouseEnter;
                 textBoxProfession.MouseEnter  -= textBoxProfession_MouseEnter;
@@ -73,7 +74,8 @@ namespace Data_Collector
                 useFilter_button.MouseEnter   += useFilter_button_MouseEnter; // подписка для 'Фильтр'
                 goWalker_button.MouseEnter    += goWalker_button_MouseEnter;  // подписка для 'Извлечь'
                 insertDB_button.MouseEnter    += insertDB_button_MouseEnter;  // подписка для 'Вставить'
-                recordDB_button.MouseEnter    += recordDB_button_MouseEnter;  // отписка для 'Запись'
+                recordDB_button.MouseEnter    += recordDB_button_MouseEnter;  // подписка для 'Запись'
+                delDB_button.MouseEnter       += delDB_button_MouseEnter;     // подписка для 'Удалить'
                 trackBar.MouseEnter           += trackBar_MouseEnter;         // подписка для 'trackBar'
                 textBoxCompany.MouseEnter     += textBoxCompany_MouseEnter;
                 textBoxProfession.MouseEnter  += textBoxProfession_MouseEnter;
@@ -112,6 +114,14 @@ namespace Data_Collector
             info.Text = "Записать все данные в DB?";
         }
         private void recordDB_button_MouseLeave(object sender, EventArgs e)  // курсор снаружи 'Запись'
+        {
+            info.Text = "";
+        }
+        private void delDB_button_MouseEnter(object sender, EventArgs e)     // курсор внутри 'Удалить'
+        {
+            info.Text = "Для удаления строки выберите лежащую в ней ячейку.";
+        }
+        private void delDB_button_MouseLeave(object sender, EventArgs e)     // курсор снаружи 'Удалить'
         {
             info.Text = "";
         }

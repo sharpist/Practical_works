@@ -37,10 +37,12 @@ namespace Data_Collector
         private List<string> htmlText, links;             // html-текст / ссылки анкет
         private List<Profile> profiles, filteredProfiles; // найденная информация в анкетах
         private byte limit;                               // ограничитель страниц
+        private bool sign;                                // флаг
 
 
         private async void goWalker_button_Click(object sender, EventArgs e)
         {
+            sign = true;
             limit = (byte)trackBar.Value;
             setGUI(0); // GUI disabled
 
@@ -57,19 +59,15 @@ namespace Data_Collector
 
 
                 textBox.Text = "";
-                if (profiles != null)
+                for (ushort i = 0; i < profiles.Count; i++)
                 {
-                    for (ushort i = 0; i < profiles.Count; i++)
-                    {
-                        textBox.Text += profiles[i].Company     + Environment.NewLine;
-                        textBox.Text += profiles[i].Profession  + Environment.NewLine;
-                        textBox.Text += profiles[i].Salary      + Environment.NewLine;
-                        textBox.Text += profiles[i].Description + Environment.NewLine;
-                        textBox.Text += profiles[i].Demand      + Environment.NewLine;
-                        textBox.Text +=                           Environment.NewLine;
-                    }
+                    textBox.Text += profiles[i].Company     + Environment.NewLine;
+                    textBox.Text += profiles[i].Profession  + Environment.NewLine;
+                    textBox.Text += profiles[i].Salary      + Environment.NewLine;
+                    textBox.Text += profiles[i].Description + Environment.NewLine;
+                    textBox.Text += profiles[i].Demand      + Environment.NewLine;
+                    textBox.Text +=                           Environment.NewLine;
                 }
-                else { textBox.Text = "Коллекция profiles не содержит данные!"; }
             }
 
             catch (Exception ex)
