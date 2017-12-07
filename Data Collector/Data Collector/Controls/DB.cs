@@ -33,12 +33,11 @@ namespace Data_Collector
 
                 while (await sqlReader.ReadAsync())
                 {
-                    textBox.Text += Convert.ToString(sqlReader["Id"])          + "  " +
-                                    Convert.ToString(sqlReader["Company"])     + "  " +
-                                    Convert.ToString(sqlReader["Profession"])  + "  " +
-                                    Convert.ToString(sqlReader["Salary"])      + "  " +
-                                    Convert.ToString(sqlReader["Description"]) + "  " +
-                                    Convert.ToString(sqlReader["Demand"])      + Environment.NewLine;
+                    textBox.Text += $"Компания: {sqlReader["Company"].ToString()}" + "\t" + $"Профессия: {sqlReader["Profession"].ToString()}" + Environment.NewLine;
+                    textBox.Text += $"Зарплата: {sqlReader["Salary"].ToString()}"                                                              + Environment.NewLine;
+                    textBox.Text += sqlReader["Description"].ToString()                                                                        + Environment.NewLine;
+                    textBox.Text += sqlReader["Demand"].ToString()                                                                             + Environment.NewLine;
+                    textBox.Text +=                                                                                                              Environment.NewLine;
                 }
             }
 

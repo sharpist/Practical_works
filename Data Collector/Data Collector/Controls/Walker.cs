@@ -21,11 +21,17 @@ namespace Data_Collector
                     case 1: address = links[i - 1];
                     break;
                 }
-                HttpWebRequest myHttwebrequest = (HttpWebRequest)HttpWebRequest.Create(address);
-                HttpWebResponse myHttpWebresponse = (HttpWebResponse)myHttwebrequest.GetResponse();
-                StreamReader strm = new StreamReader(myHttpWebresponse.GetResponseStream());
-                htmlText.Add(strm.ReadToEnd());
-                if (strm != null) strm.Close();
+
+                StreamReader strm = null;
+                try
+                {
+                    HttpWebRequest myHttpWebRequest = (HttpWebRequest)HttpWebRequest.Create(address);
+                    HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
+                    strm = new StreamReader(myHttpWebResponse.GetResponseStream());
+                    htmlText.Add(strm.ReadToEnd());
+                }
+                catch (Exception ex) { textBox.Text = ex.Message; }
+                finally { if (strm != null) strm.Close(); }
             }
         }
 
