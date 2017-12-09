@@ -13,11 +13,11 @@ namespace Data_Collector
                 sign = false;
 
                 // отбросить некорректные данные
-                IEnumerable<Profile> selection = from Profile profile in profiles
+                IEnumerable<Profile> selection = from Profile profile in profiles.ToList()
                                                  where profile.Salary != "з/п не указана"
                                                  select profile;
                 // найти среднее значение
-                double average = selection.Average(profile => int.Parse(profile.Salary)); //средний возраст
+                double average = selection.Average(profile => int.Parse(profile.Salary));
 
                 // определить границы
                 double max = average * 1.1;
@@ -30,7 +30,7 @@ namespace Data_Collector
                         double.Parse(profile.Salary) >= min)
                         filteredProfiles.Add(profile);
                 }
-                //profiles.Clear();
+                profiles.Clear();
 
                 textBox.Text = "";
                 for (ushort i = 0; i < filteredProfiles.Count; i++)

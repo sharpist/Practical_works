@@ -61,7 +61,7 @@ namespace Data_Collector
         {
             for (; start < stop; start++)
             {
-                Profile profile = new Profile();      // новый профиль
+                Profile profile = default(Profile);   // новый профиль
 
                 for (ushort key = 1; key <= 5; key++) // перебираем регулярные выражения
                 {

@@ -74,7 +74,6 @@ namespace Data_Collector
             finally
             {
                 setGUI(1); // GUI enabled
-                //htmlText.Clear(); links.Clear(); profiles.Clear(); filteredProfiles.Clear();
             }
         }
 

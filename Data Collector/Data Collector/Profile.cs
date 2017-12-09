@@ -1,6 +1,6 @@
 ﻿namespace Data_Collector
 {
-    class Profile
+    struct Profile
     {
         public string Company { get; set; }
         public string Profession { get; set; }

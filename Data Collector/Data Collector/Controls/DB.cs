@@ -34,10 +34,10 @@ namespace Data_Collector
                 while (await sqlReader.ReadAsync())
                 {
                     textBox.Text += $"Компания: {sqlReader["Company"].ToString()}" + "\t" + $"Профессия: {sqlReader["Profession"].ToString()}" + Environment.NewLine;
-                    textBox.Text += $"Зарплата: {sqlReader["Salary"].ToString()}"                                                              + Environment.NewLine;
-                    textBox.Text += sqlReader["Description"].ToString()                                                                        + Environment.NewLine;
-                    textBox.Text += sqlReader["Demand"].ToString()                                                                             + Environment.NewLine;
-                    textBox.Text +=                                                                                                              Environment.NewLine;
+                    textBox.Text += $"Зарплата: {sqlReader["Salary"].ToString()}" + Environment.NewLine;
+                    textBox.Text += sqlReader["Description"].ToString()           + Environment.NewLine;
+                    textBox.Text += sqlReader["Demand"].ToString()                + Environment.NewLine;
+                    textBox.Text +=                                                 Environment.NewLine;
                 }
             }
 
@@ -115,8 +115,18 @@ namespace Data_Collector
         private void delDB_button_Click(object sender, EventArgs e)
         {
             try
-            { profileDataGridView.Rows.RemoveAt(profileDataGridView.CurrentCell.RowIndex); }
-            catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            {
+                int row = profileDataGridView.CurrentRow.Index;
+                int Id = Convert.ToInt32(profileDataGridView.Rows[row].Cells[0].Value);
+                //profileDataGridView.Rows.RemoveAt(rowIndex);
+
+                SqlCommand command = sqlConnection.CreateCommand();
+                command.CommandText = $"DELETE FROM [Profile] WHERE Id = '{Id}'";
+                command.ExecuteNonQuery();
+                this.profileTableAdapter.Fill(this.dBDataSet.Profile);
+            }
+            catch (Exception ex)
+            { textBox.Text = ex.Message; }
         }
         private void finderDB_button_Click(object sender, EventArgs e)
         {
@@ -132,7 +142,7 @@ namespace Data_Collector
                     { if (!Char.IsNumber(c)) throw new Exception("Неверные данные!"); }
 
                     SqlCommand command= sqlConnection.CreateCommand();
-                    command.CommandText = $"select Company, Profession FROM [Profile] where Salary = '{textBoxSalary.Text}' ";
+                    command.CommandText = $"SELECT Company, Profession FROM [Profile] WHERE Salary = '{textBoxSalary.Text}'";
                     sqlReader = command.ExecuteReader();
                     while (sqlReader.Read())
                     {
