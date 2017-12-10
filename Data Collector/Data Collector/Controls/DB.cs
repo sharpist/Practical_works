@@ -11,6 +11,7 @@ namespace Data_Collector
         private string connectionString;     // строка подключения
 
 
+        // загрузка формы/подключение к DB
         private async void Form_Load(object sender, EventArgs e)
         {
             // подготовить адрес
@@ -50,6 +51,9 @@ namespace Data_Collector
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dBDataSet.Profile". При необходимости она может быть перемещена или удалена.
             this.profileTableAdapter.Fill(this.dBDataSet.Profile);
         }
+
+
+        // вставить/сохранить строку
         private async void insertDB_button_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(textBoxCompany.Text)     && !string.IsNullOrWhiteSpace(textBoxCompany.Text)     &&
@@ -74,6 +78,9 @@ namespace Data_Collector
             }
             else { textBox.Text = "Заполните все поля!"; }
         }
+
+
+        // записывать в DB
         private void recordDB_button_Click(object sender, EventArgs e)
         {
             try
@@ -112,13 +119,16 @@ namespace Data_Collector
             }
             catch (Exception ex) { MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
+
+
+        // удалить выбранную строку
         private void delDB_button_Click(object sender, EventArgs e)
         {
             try
             {
                 int row = profileDataGridView.CurrentRow.Index;
                 int Id = Convert.ToInt32(profileDataGridView.Rows[row].Cells[0].Value);
-                //profileDataGridView.Rows.RemoveAt(rowIndex);
+                //profileDataGridView.Rows.RemoveAt(profileDataGridView.CurrentCell.RowIndex);
 
                 SqlCommand command = sqlConnection.CreateCommand();
                 command.CommandText = $"DELETE FROM [Profile] WHERE Id = '{Id}'";
@@ -128,6 +138,9 @@ namespace Data_Collector
             catch (Exception ex)
             { textBox.Text = ex.Message; }
         }
+
+
+        // выборка по значению
         private void finderDB_button_Click(object sender, EventArgs e)
         {
             textBox.Text = "";
@@ -155,6 +168,9 @@ namespace Data_Collector
             }
             else { textBox.Text = "Неверные данные!"; }
         }
+
+
+
         private void profileBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();

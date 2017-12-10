@@ -15,14 +15,17 @@ namespace Data_Collector
         {
             info.Text = $"Страниц в обработке: {(Math.Round(trackBar.Value / 1.0)).ToString()}";
         }
+
         private void Form_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
             if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed) { sqlConnection.Close(); }
         }
+
+
         private async void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textBox.Text = "";
-            SqlDataReader sqlReader = null;  // получить таблицу в табличном представлении
+            SqlDataReader sqlReader = null; // получить таблицу в табличном представлении
             // запрос к DB                         инструкция запрос         соединение
             SqlCommand command = new SqlCommand("SELECT * FROM [Profile]", sqlConnection); // (*) считывать все колонки во всех строках
 
@@ -34,7 +37,11 @@ namespace Data_Collector
 
                 while (await sqlReader.ReadAsync())
                 {
-                    textBox.Text += Convert.ToString(sqlReader["Id"]) + "  " + Convert.ToString(sqlReader["Company"]) + "  " + Convert.ToString(sqlReader["Profession"]) + "  " + Convert.ToString(sqlReader["Salary"]);
+                    textBox.Text += $"Компания: {sqlReader["Company"].ToString()}" + "\t" + $"Профессия: {sqlReader["Profession"].ToString()}" + Environment.NewLine;
+                    textBox.Text += $"Зарплата: {sqlReader["Salary"].ToString()}" + Environment.NewLine;
+                    textBox.Text += sqlReader["Description"].ToString()           + Environment.NewLine;
+                    textBox.Text += sqlReader["Demand"].ToString()                + Environment.NewLine;
+                    textBox.Text +=                                                 Environment.NewLine;
                 }
             }
 
@@ -52,6 +59,8 @@ namespace Data_Collector
         {
             MessageBox.Show("\"Data Collector\" пример программы для сбора данных с веб ресурса.\nBy Alexander Usov", "О программе", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+
         private void setGUI(byte key)
         {
             switch (key) {
@@ -87,6 +96,8 @@ namespace Data_Collector
                 break;
             }
         }
+
+
         private void useFilter_button_MouseEnter(object sender, EventArgs e) // курсор внутри 'Фильтр'
         {
             info.Text = "Вырезать результаты отклоняющиеся на 10% от средней з/п?";
@@ -95,6 +106,8 @@ namespace Data_Collector
         {
             info.Text = "";
         }
+
+
         private void goWalker_button_MouseEnter(object sender, EventArgs e)  // курсор внутри 'Извлечь'
         {
             info.Text = "Запустить сбор данных?";
@@ -103,6 +116,8 @@ namespace Data_Collector
         {
             info.Text = "";
         }
+
+
         private void insertDB_button_MouseEnter(object sender, EventArgs e)  // курсор внутри 'Вставить'
         {
             info.Text = "Добавить введённые данные в DB?";
@@ -111,6 +126,8 @@ namespace Data_Collector
         {
             info.Text = "";
         }
+
+
         private void recordDB_button_MouseEnter(object sender, EventArgs e)  // курсор внутри 'Запись'
         {
             info.Text = "Записать все данные в DB?";
@@ -119,6 +136,8 @@ namespace Data_Collector
         {
             info.Text = "";
         }
+
+
         private void delDB_button_MouseEnter(object sender, EventArgs e)     // курсор внутри 'Удалить'
         {
             info.Text = "Для удаления строки выберите лежащую в ней ячейку.";
@@ -127,6 +146,8 @@ namespace Data_Collector
         {
             info.Text = "";
         }
+
+
         private void finderDB_button_MouseEnter(object sender, EventArgs e)  // курсор внутри '?'
         {
             info.Text = "Произвести выборку по значению 'Зарплата'?";
@@ -135,6 +156,8 @@ namespace Data_Collector
         {
             info.Text = "";
         }
+
+
         private void trackBar_MouseEnter(object sender, EventArgs e)         // курсор внутри 'trackBar'
         {
             info.Text = "Установить число просматриваемых страниц?";
@@ -143,6 +166,8 @@ namespace Data_Collector
         {
             info.Text = "";
         }
+
+
         private void textBoxCompany_MouseEnter(object sender, EventArgs e)
         {
             info.Text = "Компания...";
@@ -151,6 +176,8 @@ namespace Data_Collector
         {
             info.Text = "";
         }
+
+
         private void textBoxProfession_MouseEnter(object sender, EventArgs e)
         {
             info.Text = "Должность...";
@@ -159,6 +186,8 @@ namespace Data_Collector
         {
             info.Text = "";
         }
+
+
         private void textBoxSalary_MouseEnter(object sender, EventArgs e)
         {
             info.Text = "Зарплата...";
@@ -167,6 +196,8 @@ namespace Data_Collector
         {
             info.Text = "";
         }
+
+
         private void textBoxDescription_MouseEnter(object sender, EventArgs e)
         {
             info.Text = "Описание...";
@@ -175,6 +206,8 @@ namespace Data_Collector
         {
             info.Text = "";
         }
+
+
         private void textBoxDemand_MouseEnter(object sender, EventArgs e)
         {
             info.Text = "Требования...";
