@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,8 +11,6 @@ namespace Data_Collector
         {
             if (profiles.Count != 0)
             {
-                sign = false;
-
                 // отбросить некорректные данные
                 IEnumerable<Profile> selection = from Profile profile in profiles.ToList()
                                                  where profile.Salary != "з/п не указана"
@@ -24,22 +23,23 @@ namespace Data_Collector
                 double min = average * 0.9;
 
 
+                // заполнить profiles
+                this.profiles = new ConcurrentBag<Profile>();
                 foreach (var profile in selection)
                 {
                     if (double.Parse(profile.Salary) <= max &&
                         double.Parse(profile.Salary) >= min)
-                        filteredProfiles.Add(profile);
+                        profiles.Add(profile);
                 }
-                profiles.Clear();
 
                 textBox.Text = "";
-                for (ushort i = 0; i < filteredProfiles.Count; i++)
+                foreach (var profile in profiles)
                 {
-                    textBox.Text += $"Компания: {filteredProfiles[i].Company}" + "\t" + $"Профессия: {filteredProfiles[i].Profession}" + Environment.NewLine;
-                    textBox.Text += $"Зарплата: {filteredProfiles[i].Salary}" + Environment.NewLine;
-                    textBox.Text += filteredProfiles[i].Description           + Environment.NewLine;
-                    textBox.Text += filteredProfiles[i].Demand                + Environment.NewLine;
-                    textBox.Text +=                                             Environment.NewLine;
+                    textBox.Text += $"Компания: {profile.Company}" + "\t" + $"Профессия: {profile.Profession}" + Environment.NewLine;
+                    textBox.Text += $"Зарплата: {profile.Salary}" + Environment.NewLine;
+                    textBox.Text += profile.Description           + Environment.NewLine;
+                    textBox.Text += profile.Demand                + Environment.NewLine;
+                    textBox.Text +=                                 Environment.NewLine;
                 }
             }
 

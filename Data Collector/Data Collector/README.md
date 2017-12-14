@@ -8,5 +8,7 @@
 * data saving with filtering is available
 
 ## Example of GUI this program:
-
 ![screen capture 1](example1.png)
+
+## Data extraction from a remote web resource:
+![screen capture 2](example2.png)

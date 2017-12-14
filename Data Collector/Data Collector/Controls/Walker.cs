@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -18,7 +19,7 @@ namespace Data_Collector
                     case 0: address = url + i.ToString();
                     break;
 
-                    case 1: address = links[i - 1];
+                    case 1: address = links.ElementAt(i - 1);
                     break;
                 }
 
@@ -42,7 +43,7 @@ namespace Data_Collector
             for (; start < stop; start++)
             {
                 // найденные соответствия
-                MatchCollection matches = Regex.Matches(htmlText[start], patterns[0], RegexOptions.IgnoreCase);
+                MatchCollection matches = Regex.Matches(htmlText.ElementAt(start), patterns[0], RegexOptions.IgnoreCase);
 
                 if (matches.Count == 0) // проверяем найден ли
                 { MessageBox.Show("не найден"); }
@@ -66,7 +67,7 @@ namespace Data_Collector
                 for (ushort key = 1; key <= 5; key++) // перебираем регулярные выражения
                 {
                     // найденные соответствия
-                    MatchCollection matches = Regex.Matches(htmlText[start], patterns[key], RegexOptions.IgnoreCase);
+                    MatchCollection matches = Regex.Matches(htmlText.ElementAt(start), patterns[key], RegexOptions.IgnoreCase);
                     if (matches.Count != 0)
                     {
                         switch (key) {

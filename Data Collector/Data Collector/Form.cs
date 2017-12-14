@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Threading.Tasks;
 
 namespace Data_Collector
@@ -12,10 +12,10 @@ namespace Data_Collector
             // откл. столбец Id
             profileDataGridView.Columns[0].Visible = false;
 
-            this.htmlText = new List<string>();
-            this.links = new List<string>();
-            this.profiles = new List<Profile>();
-            this.filteredProfiles = new List<Profile>();
+            this.htmlText = new ConcurrentBag<String>();
+            this.links    = new ConcurrentBag<String>();
+            this.profiles = new ConcurrentBag<Profile>();
+
             this.patterns = new string[6]
             {
                 // анкета
@@ -33,48 +33,43 @@ namespace Data_Collector
             };
         }
         
-        private string[] patterns;                        // шаблоны
-        private List<string> htmlText, links;             // html-текст / ссылки анкет
-        private List<Profile> profiles, filteredProfiles; // найденная информация в анкетах
-        private byte limit;                               // ограничитель страниц
-        private bool sign;                                // флаг
+        private string[] patterns;                     // шаблоны
+        private ConcurrentBag<String> htmlText, links; // html-текст / ссылки анкет
+        private ConcurrentBag<Profile> profiles;       // найденная информация в анкетах
 
 
         private async void goWalker_button_Click(object sender, EventArgs e)
         {
-            sign = true;
-            limit = (byte)trackBar.Value;
+            // ограничитель страниц
+            var limit = (ushort)trackBar.Value;
             setGUI(0); // GUI disabled
 
             try
             {
                 await getHtmlAsync(0, limit, @"https://job.ru/catalog/production/page/"); // получить HTML страниц
 
-                await parsHtmlPageAsync();                                                // получить ссылки анкет
+                await parsHtmlPageAsync(htmlText.Count);                                  // получить ссылки анкет
 
                 await getHtmlAsync(1, (ushort)links.Count);                               // получить HTML профилей
-                links.Clear();
+                this.links = new ConcurrentBag<String>();
 
-                await parsHtmlProfileAsync();                                             // получить данные анкет
+                await parsHtmlProfileAsync(htmlText.Count);                               // получить данные анкет
 
 
                 textBox.Text = "";
-                for (ushort i = 0; i < profiles.Count; i++)
+                foreach (var profile in profiles)
                 {
-                    textBox.Text += $"Компания: {profiles[i].Company}" + "\t" + $"Профессия: {profiles[i].Profession}" + Environment.NewLine;
-                    textBox.Text += $"Зарплата: {profiles[i].Salary}" + Environment.NewLine;
-                    textBox.Text += profiles[i].Description           + Environment.NewLine;
-                    textBox.Text += profiles[i].Demand                + Environment.NewLine;
-                    textBox.Text +=                                     Environment.NewLine;
+                    textBox.Text += $"Компания: {profile.Company}" + "\t" + $"Профессия: {profile.Profession}" + Environment.NewLine;
+                    textBox.Text += $"Зарплата: {profile.Salary}" + Environment.NewLine;
+                    textBox.Text += profile.Description           + Environment.NewLine;
+                    textBox.Text += profile.Demand                + Environment.NewLine;
+                    textBox.Text +=                                 Environment.NewLine;
                 }
             }
 
             catch (Exception ex)
             { textBox.Text = ex.Message; }
-            finally
-            {
-                setGUI(1); // GUI enabled
-            }
+            finally { setGUI(1); } // GUI enabled
         }
 
 
@@ -84,19 +79,21 @@ namespace Data_Collector
             Task task = Task.Run(() => getHtml(key, limit, url));
             await task;
         }
-        private async Task parsHtmlPageAsync()
+        private async Task parsHtmlPageAsync(int range)
         {
-            Task task1 = Task.Run(() => parsHtmlPage(0, htmlText.Count / 2));
-            Task task2 = Task.Run(() => parsHtmlPage(htmlText.Count / 2, htmlText.Count));
+            Task task1 = Task.Run(() => parsHtmlPage(0, range / 2));
+            Task task2 = Task.Run(() => parsHtmlPage(range / 2, range));
             await task1; await task2;
-            htmlText.Clear();
+
+            this.htmlText = new ConcurrentBag<String>();
         }
-        private async Task parsHtmlProfileAsync()
+        private async Task parsHtmlProfileAsync(int range)
         {
-            Task task1 = Task.Run(() => parsHtmlProfile(0, htmlText.Count / 2));
-            Task task2 = Task.Run(() => parsHtmlProfile(htmlText.Count / 2, htmlText.Count));
+            Task task1 = Task.Run(() => parsHtmlProfile(0, range / 2));
+            Task task2 = Task.Run(() => parsHtmlProfile(range / 2, range));
             await task1; await task2;
-            htmlText.Clear();
+
+            this.htmlText = new ConcurrentBag<String>();
         }
         #endregion
     }

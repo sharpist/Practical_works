@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -85,34 +84,17 @@ namespace Data_Collector
         {
             try
             {
-                if (profiles.Count != 0 || filteredProfiles.Count != 0)
+                if (profiles.Count != 0 && !profiles.IsEmpty)
                 {
-                    switch (sign) {
-                        case true:
-                        for (ushort i = 0; i < profiles.Count; i++)
-                        {
-                            this.profileTableAdapter.Insert(profiles[i].Company,
-                                                            profiles[i].Profession,
-                                                            profiles[i].Salary,
-                                                            profiles[i].Description,
-                                                            profiles[i].Demand);
+                    foreach (var profile in profiles)
+                    {
+                        this.profileTableAdapter.Insert(profile.Company,
+                                                        profile.Profession,
+                                                        profile.Salary,
+                                                        profile.Description,
+                                                        profile.Demand);
 
-                            this.profileTableAdapter.Fill(this.dBDataSet.Profile);
-                        }
-                        break;
-
-                        case false:
-                        for (ushort i = 0; i < filteredProfiles.Count; i++)
-                        {
-                            this.profileTableAdapter.Insert(filteredProfiles[i].Company,
-                                                            filteredProfiles[i].Profession,
-                                                            filteredProfiles[i].Salary,
-                                                            filteredProfiles[i].Description,
-                                                            filteredProfiles[i].Demand);
-
-                            this.profileTableAdapter.Fill(this.dBDataSet.Profile);
-                        }
-                        break;
+                        this.profileTableAdapter.Fill(this.dBDataSet.Profile);
                     }
                 }
                 else { textBox.Text = "Отсутствуют захваченные данные к записи!"; }
