@@ -76,22 +76,39 @@ namespace Data_Collector
         #region группа асинхронных методов
         private async Task getHtmlAsync(byte key, ushort limit, string url = null)
         {
-            Task task = Task.Run(() => getHtml(key, limit, url));
-            await task;
+            Task task = Task.Factory.StartNew(() => getHtml(key, limit, url),
+                TaskCreationOptions.LongRunning);
+
+            try
+            { await task; }
+            catch (OperationCanceledException oce)
+            { textBox.Text = oce.Message; }
         }
         private async Task parsHtmlPageAsync(int range)
         {
-            Task task1 = Task.Run(() => parsHtmlPage(0, range / 2));
-            Task task2 = Task.Run(() => parsHtmlPage(range / 2, range));
-            await task1; await task2;
+            Task task1 = Task.Factory.StartNew(() => parsHtmlPage(0, range / 2),
+                TaskCreationOptions.LongRunning);
+            Task task2 = Task.Factory.StartNew(() => parsHtmlPage(range / 2, range),
+                TaskCreationOptions.LongRunning);
+
+            try
+            { await task1; await task2; }
+            catch (OperationCanceledException oce)
+            { textBox.Text = oce.Message; }
 
             this.htmlText = new ConcurrentBag<String>();
         }
         private async Task parsHtmlProfileAsync(int range)
         {
-            Task task1 = Task.Run(() => parsHtmlProfile(0, range / 2));
-            Task task2 = Task.Run(() => parsHtmlProfile(range / 2, range));
-            await task1; await task2;
+            Task task1 = Task.Factory.StartNew(() => parsHtmlProfile(0, range / 2),
+                TaskCreationOptions.LongRunning);
+            Task task2 = Task.Factory.StartNew(() => parsHtmlProfile(range / 2, range),
+                TaskCreationOptions.LongRunning);
+
+            try
+            { await task1; await task2; }
+            catch (OperationCanceledException oce)
+            { textBox.Text = oce.Message; }
 
             this.htmlText = new ConcurrentBag<String>();
         }
