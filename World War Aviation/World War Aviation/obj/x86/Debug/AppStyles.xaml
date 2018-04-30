@@ -13,8 +13,30 @@
     <Style x:Key="GridStyle2" TargetType="Grid">
         <Setter Property="Background" Value="{StaticResource ColumnarBrush}"/>
     </Style>
-    
-    
-    
+
+    <!--шрифт TextBlock-->
+    <Style x:Key="FontStyle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Geneva"/>
+    </Style>
+    <!--стиль основной (составной) TextBlock-->
+    <Style x:Key="GeneralStyle" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    <!--стиль заголовок TextBlock-->
+    <Style x:Key="HeaderStyle" TargetType="TextBlock" BasedOn="{StaticResource GeneralStyle}">
+        <Setter Property="FontStyle" Value="Oblique"/>
+        <Setter Property="FontSize" Value="26"/>
+        <!--преобразование наклон-->
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <CompositeTransform Rotation="-3"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
 

@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:Name="externaGrid">
+    <Grid x:Name="externalGrid">
         
         <!--табличная разметка-->
         <Grid x:Name="tabularView" Margin="10,20,10,20" Visibility="Visible">
@@ -15,7 +15,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="10*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" x:Name="name" Text="И-16 Поликарпов"/>
+            <TextBlock Grid.Row="0" x:Name="name" Style="{StaticResource HeaderStyle}" Text="И-16 Поликарпов"/>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -38,13 +38,13 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Описание"/>
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Тип"/>
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Годы производства"/>
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Единиц произведено"/>
-                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Мощность [л.с.]"/>
-                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Скорость [км/ч]"/>
-                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Практический потолок [м]"/>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Описание"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Тип"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Годы производства"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Единиц произведено"/>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Мощность [л.с.]"/>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Скорость [км/ч]"/>
+                    <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Практический потолок [м]"/>
                 </Grid>
             </Grid>
         </Grid>
@@ -55,7 +55,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="10*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" x:Name="cName" Text="И-16 Поликарпов"/>
+            <TextBlock Grid.Row="0" x:Name="cName" Style="{StaticResource HeaderStyle}" Text="И-16 Поликарпов"/>
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -78,13 +78,13 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Описание"/>
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Тип"/>
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Годы производства"/>
-                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Единиц произведено"/>
-                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Мощность [л.с.]"/>
-                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Скорость [км/ч]"/>
-                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Практический потолок [м]"/>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Описание"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Тип"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Годы производства"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Единиц произведено"/>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Мощность [л.с.]"/>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Скорость [км/ч]"/>
+                    <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource GeneralStyle}" Text="Практический потолок [м]"/>
                 </Grid>
             </Grid>
         </Grid>
@@ -101,7 +101,7 @@
                     </VisualState.StateTriggers>
                     <!--установщик-->
                     <VisualState.Setters>
-                        <Setter Target="externaGrid.Style" Value="{StaticResource GridStyle1}"/>
+                        <Setter Target="externalGrid.Style" Value="{StaticResource GridStyle1}"/>
                         <Setter Target="tabularView.Visibility" Value="Visible"/>
                         <Setter Target="columnarView.Visibility" Value="Collapsed"/>
                     </VisualState.Setters>
@@ -115,7 +115,7 @@
                     </VisualState.StateTriggers>
                     <!--установщик-->
                     <VisualState.Setters>
-                        <Setter Target="externaGrid.Style" Value="{StaticResource GridStyle2}"/>
+                        <Setter Target="externalGrid.Style" Value="{StaticResource GridStyle2}"/>
                         <Setter Target="tabularView.Visibility" Value="Collapsed"/>
                         <Setter Target="columnarView.Visibility" Value="Visible"/>
                     </VisualState.Setters>

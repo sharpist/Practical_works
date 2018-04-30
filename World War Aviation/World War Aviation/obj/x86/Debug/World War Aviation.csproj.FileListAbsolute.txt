@@ -111,7 +111,6 @@ C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War
 C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\System.Xml.XDocument.dll
 C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\System.Xml.XmlDocument.dll
 C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\System.Xml.XmlSerializer.dll
-C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\obj\x86\Debug\World War Aviation.csprojResolveAssemblyReference.cache
 C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\obj\x86\Debug\App.g.i.cs
 C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\obj\x86\Debug\App.g.cs
 C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\obj\x86\Debug\MainPage.g.i.cs
