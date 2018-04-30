@@ -141,4 +141,11 @@
         </VisualStateManager.VisualStateGroups>
         
     </Grid>
+    <!--панель команд-->
+    <Page.TopAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="previousAviation" Icon="Previous" Label="Previous" Command="{Binding Path=PreviousAviation}"/>
+            <AppBarButton x:Name="nextAviation" Icon="Next" Label="Next" Command="{Binding Path=NextAviation}"/>
+        </CommandBar>
+    </Page.TopAppBar>
 </Page>

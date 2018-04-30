@@ -106,6 +106,7 @@ namespace World_War_Aviation
             }
         }
 
+
         protected virtual void OnPropertyChanged(string propertyName)
         { PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName)); }
         // событие приводит представление к отображению последней версии данных
