@@ -10,19 +10,19 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         
         <!--табличная разметка-->
-        <Grid x:Name="tabularView" Margin="10,20,10,20" Visibility="Visible">
+        <Grid x:ConnectionId='1' x:Name="tabularView" Margin="10,20,10,20" Visibility="Visible">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="10*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" x:Name="name" Text="И-16 Поликарпов"/>
+            <TextBlock x:ConnectionId='5' Grid.Row="0" x:Name="name" Text="И-16 Поликарпов"/>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <!--изображение-->
-                <Image Grid.Column="0" x:Name="picture" Stretch="Uniform" Source="image.jpg"/>
+                <Image x:ConnectionId='6' Grid.Column="0" x:Name="picture" Stretch="Uniform" Source="image.jpg"/>
                 <!--технические характеристики-->
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
@@ -50,19 +50,19 @@
         </Grid>
         
         <!--столбцовая разметка-->
-        <Grid x:Name="columnarView" Margin="10,20,10,20" Visibility="Collapsed">
+        <Grid x:ConnectionId='2' x:Name="columnarView" Margin="10,20,10,20" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="10*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" x:Name="cName" Text="И-16 Поликарпов"/>
+            <TextBlock x:ConnectionId='3' Grid.Row="0" x:Name="cName" Text="И-16 Поликарпов"/>
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <!--изображение-->
-                <Image Grid.Row="0" x:Name="cPicture" Stretch="UniformToFill" Source="image.jpg"/>
+                <Image x:ConnectionId='4' Grid.Row="0" x:Name="cPicture" Stretch="UniformToFill" Source="image.jpg"/>
                 <!--технические характеристики-->
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
@@ -94,7 +94,7 @@
             <VisualStateGroup>
                 
                 <!--визуальное состояние 1-->
-                <VisualState x:Name="TabularLayout">
+                <VisualState x:ConnectionId='7' x:Name="TabularLayout">
                     <!--инициатор-->
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="720"/>
@@ -107,7 +107,7 @@
                 </VisualState>
                 
                 <!--визуальное состояние 2-->
-                <VisualState x:Name="ColumnarLayout">
+                <VisualState x:ConnectionId='8' x:Name="ColumnarLayout">
                     <!--инициатор-->
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="0"/>
@@ -124,3 +124,4 @@
         
     </Grid>
 </Page>
+

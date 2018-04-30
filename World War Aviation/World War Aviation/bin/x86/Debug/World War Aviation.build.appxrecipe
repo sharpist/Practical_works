@@ -334,11 +334,11 @@
     <AppxPackagedFile Include="C:\Users\Alexander\.nuget\packages\System.Xml.XmlSerializer\4.0.10\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Images\backColumnar.jpg">
-      <PackagePath>Images\backColumnar.jpg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Images\columnarBack.jpg">
+      <PackagePath>Images\columnarBack.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Images\backTabular.jpg">
-      <PackagePath>Images\backTabular.jpg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Images\tabularBack.jpg">
+      <PackagePath>Images\tabularBack.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>

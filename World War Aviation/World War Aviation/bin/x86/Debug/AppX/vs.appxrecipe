@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-30T12:54:36.189</Modified>
+      <Modified>2018-04-30T15:23:16.847</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\World War Aviation.exe">
       <PackagePath>entrypoint\World War Aviation.exe</PackagePath>
-      <Modified>2018-04-30T12:54:35.095</Modified>
+      <Modified>2018-04-30T15:23:15.769</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -448,12 +448,12 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-07-22T20:11:12.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Images\backColumnar.jpg">
-      <PackagePath>Images\backColumnar.jpg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Images\columnarBack.jpg">
+      <PackagePath>Images\columnarBack.jpg</PackagePath>
       <Modified>2018-04-30T10:15:27.037</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Images\backTabular.jpg">
-      <PackagePath>Images\backTabular.jpg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Images\tabularBack.jpg">
+      <PackagePath>Images\tabularBack.jpg</PackagePath>
       <Modified>2018-04-30T10:15:27.137</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Properties\Default.rd.xml">
@@ -496,7 +496,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\World War Aviation.xr.xml">
       <PackagePath>World War Aviation.xr.xml</PackagePath>
-      <Modified>2018-04-30T12:46:51.703</Modified>
+      <Modified>2018-04-30T14:58:05.509</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -504,11 +504,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2018-04-30T12:54:35.861</Modified>
+      <Modified>2018-04-30T15:23:16.533</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\Core\World War Aviation.exe">
       <PackagePath>World War Aviation.exe</PackagePath>
-      <Modified>2018-04-30T12:54:36.182</Modified>
+      <Modified>2018-04-30T15:23:16.838</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
