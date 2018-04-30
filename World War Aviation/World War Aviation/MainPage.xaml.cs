@@ -22,9 +22,11 @@ namespace World_War_Aviation
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public MainPage()
-        {
+        public MainPage() {
             this.InitializeComponent();
+
+            // привязка данных
+            this.DataContext = new ViewModel();
         }
     }
 }
