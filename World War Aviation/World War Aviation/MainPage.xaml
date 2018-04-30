@@ -8,6 +8,47 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        
+        <Grid x:Name="TabularView" Margin="10,20,10,20" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" x:Name="title" Text="World War Aviation"/>
+            <TextBlock Grid.Row="1" x:Name="name"  Text="И-16 Поликарпов"/>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--изображение-->
+                <Image Grid.Column="0" x:Name="picture" Stretch="Uniform" Source="И-16.jpg"/>
+                <!--технические характеристики-->
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Описание"/>
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Тип"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Годы производства"/>
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Единиц произведено"/>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Мощность [л.с.]"/>
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Скорость [км/ч]"/>
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Практический потолок [м]"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        
     </Grid>
 </Page>
