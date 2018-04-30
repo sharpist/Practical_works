@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="World_War_Aviation.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:World_War_Aviation"
+    RequestedTheme="Light">
+
+</Application>
