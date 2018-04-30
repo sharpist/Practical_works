@@ -5,4 +5,13 @@
     xmlns:local="using:World_War_Aviation"
     RequestedTheme="Light">
 
+    <!--ссылка на локальный словарь ресурсов-->
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="AppStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+    
 </Application>

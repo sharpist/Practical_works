@@ -192,3 +192,6 @@ C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War
 C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\obj\x86\Debug\resources.en-us.resfiles
 C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\obj\x86\Debug\resources.en-us.resfiles.intermediate
 C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\AppStyles.xbf
+C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\obj\x86\Debug\AppStyles.xaml
+C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\obj\x86\Debug\AppStyles.xbf

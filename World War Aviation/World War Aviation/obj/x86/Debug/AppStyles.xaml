@@ -1,0 +1,20 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:World_War_Aviation">
+
+    <!--фон табличной разметки-->
+    <ImageBrush x:Key="TabularBrush" ImageSource="Images/tabularBack.jpg"/>
+    <Style x:Key="GridStyle1" TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource TabularBrush}"/>
+    </Style>
+    <!--фон столбцовой разметки-->
+    <ImageBrush x:Key="ColumnarBrush" ImageSource="Images/columnarBack.jpg"/>
+    <Style x:Key="GridStyle2" TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource ColumnarBrush}"/>
+    </Style>
+    
+    
+    
+</ResourceDictionary>
+
