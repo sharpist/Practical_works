@@ -18,41 +18,49 @@
             <TextBlock Grid.Row="0" Style="{StaticResource HeaderStyleTextBlock}" Text="{Binding Current.Name, Mode=OneWay}"/>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="10*"/>
                 </Grid.ColumnDefinitions>
                 <!--изображение-->
                 <Image x:ConnectionId='5' Grid.Column="0" x:Name="picture" Stretch="Uniform" Source="image.jpg"/>
                 <!--технические характеристики-->
-                <Grid Grid.Column="1">
+                <Grid Grid.Column="2">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="10*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="8*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Описание"/>
-                    <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Тип"/>
-                    <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Годы производства"/>
-                    <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Единиц произведено"/>
-                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Мощность [л.с.]"/>
-                    <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Скорость [км/ч]"/>
-                    <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Практический потолок [м]"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Тип"/>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Годы производства"/>
+                    <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Единиц произведено"/>
+                    <TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Мощность [л.с.]"/>
+                    <TextBlock Grid.Row="10" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Скорость [км/ч]"/>
+                    <TextBlock Grid.Row="12" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Практический потолок [м]"/>
 
-                    <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.Description, Mode=OneWay}"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.Type, Mode=OneWay}"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.Produced, Mode=OneWay}"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.TotalUnits, Mode=OneWay}"/>
-                    <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.AveragePower, Mode=OneWay}"/>
-                    <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.AverageSpeed, Mode=OneWay}"/>
-                    <TextBox Grid.Row="6" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.LimitHeight, Mode=OneWay}"/>
+                    <TextBox Grid.Row="0" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.Description, Mode=OneWay}"/>
+                    <TextBox Grid.Row="2" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.Type, Mode=OneWay}"/>
+                    <TextBox Grid.Row="4" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.Produced, Mode=OneWay}"/>
+                    <TextBox Grid.Row="6" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.TotalUnits, Mode=OneWay}"/>
+                    <TextBox Grid.Row="8" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.AveragePower, Mode=OneWay}"/>
+                    <TextBox Grid.Row="10" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.AverageSpeed, Mode=OneWay}"/>
+                    <TextBox Grid.Row="12" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.LimitHeight, Mode=OneWay}"/>
                 </Grid>
             </Grid>
         </Grid>
@@ -66,41 +74,49 @@
             <TextBlock Grid.Row="0" Style="{StaticResource HeaderStyleTextBlock}" Text="{Binding Current.Name, Mode=OneWay}"/>
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="10*"/>
                 </Grid.RowDefinitions>
                 <!--изображение-->
                 <Image x:ConnectionId='4' Grid.Row="0" x:Name="cPicture" Stretch="UniformToFill" Source="image.jpg"/>
                 <!--технические характеристики-->
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="10*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="8*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Описание"/>
-                    <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Тип"/>
-                    <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Годы производства"/>
-                    <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Единиц произведено"/>
-                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Мощность [л.с.]"/>
-                    <TextBlock Grid.Row="5" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Скорость [км/ч]"/>
-                    <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Практический потолок [м]"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Тип"/>
+                    <TextBlock Grid.Row="4" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Годы производства"/>
+                    <TextBlock Grid.Row="6" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Единиц произведено"/>
+                    <TextBlock Grid.Row="8" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Мощность [л.с.]"/>
+                    <TextBlock Grid.Row="10" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Скорость [км/ч]"/>
+                    <TextBlock Grid.Row="12" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Практический потолок [м]"/>
 
-                    <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.Description, Mode=OneWay}"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.Type, Mode=OneWay}"/>
-                    <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.Produced, Mode=OneWay}"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.TotalUnits, Mode=OneWay}"/>
-                    <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.AveragePower, Mode=OneWay}"/>
-                    <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.AverageSpeed, Mode=OneWay}"/>
-                    <TextBox Grid.Row="6" Grid.Column="1" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.LimitHeight, Mode=OneWay}"/>
+                    <TextBox Grid.Row="0" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.Description, Mode=OneWay}"/>
+                    <TextBox Grid.Row="2" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.Type, Mode=OneWay}"/>
+                    <TextBox Grid.Row="4" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.Produced, Mode=OneWay}"/>
+                    <TextBox Grid.Row="6" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.TotalUnits, Mode=OneWay}"/>
+                    <TextBox Grid.Row="8" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.AveragePower, Mode=OneWay}"/>
+                    <TextBox Grid.Row="10" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.AverageSpeed, Mode=OneWay}"/>
+                    <TextBox Grid.Row="12" Grid.Column="2" Style="{StaticResource GeneralStyleTextBox}" Text="{Binding Current.LimitHeight, Mode=OneWay}"/>
                 </Grid>
             </Grid>
         </Grid>
@@ -113,7 +129,7 @@
                 <VisualState x:ConnectionId='6' x:Name="TabularLayout">
                     <!--инициатор-->
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="720"/>
+                        <AdaptiveTrigger MinWindowWidth="600"/>
                     </VisualState.StateTriggers>
                     <!--установщик-->
                     <VisualState.Setters>
@@ -143,7 +159,7 @@
     </Grid>
     <!--панель команд-->
     <Page.TopAppBar>
-        <CommandBar>
+        <CommandBar Background="Transparent">
             <AppBarButton x:ConnectionId='8' x:Name="previousAviation" Icon="Previous" Label="Previous" Command="{Binding Path=PreviousAviation}"/>
             <AppBarButton x:ConnectionId='9' x:Name="nextAviation" Icon="Next" Label="Next" Command="{Binding Path=NextAviation}"/>
         </CommandBar>
