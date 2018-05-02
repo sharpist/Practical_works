@@ -194,3 +194,4 @@ C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War
 C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\AppStyles.xbf
 C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\obj\x86\Debug\AppStyles.xaml
 C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\obj\x86\Debug\AppStyles.xbf
+C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\obj\x86\Debug\World War Aviation.csprojResolveAssemblyReference.cache

@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-02T01:42:52.004</Modified>
+      <Modified>2018-05-02T13:47:07.085</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\World War Aviation.exe">
       <PackagePath>entrypoint\World War Aviation.exe</PackagePath>
-      <Modified>2018-05-02T01:42:40.530</Modified>
+      <Modified>2018-05-02T13:46:51.186</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -460,6 +460,10 @@
       <PackagePath>Resources\И-16.jpg</PackagePath>
       <Modified>2018-05-01T23:20:09.531</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Resources\МиГ-3.jpg">
+      <PackagePath>Resources\МиГ-3.jpg</PackagePath>
+      <Modified>2018-05-02T13:18:32.561</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2018-04-30T10:13:27.694</Modified>
@@ -508,11 +512,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2018-05-02T01:42:51.679</Modified>
+      <Modified>2018-05-02T13:47:06.744</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\bin\x86\Debug\Core\World War Aviation.exe">
       <PackagePath>World War Aviation.exe</PackagePath>
-      <Modified>2018-05-02T01:42:51.998</Modified>
+      <Modified>2018-05-02T13:47:07.078</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

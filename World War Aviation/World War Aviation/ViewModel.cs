@@ -41,15 +41,15 @@ namespace World_War_Aviation
                     LimitHeight ="7440 — 9800"
                 },
                 new Aviation {                  // #2
-                    Image = "",
-                    Name = "",
-                    Description = "",
-                    Type ="",
-                    Produced ="",
-                    TotalUnits ="",
-                    AveragePower ="",
-                    AverageSpeed ="",
-                    LimitHeight =""
+                    Image = "Resources/МиГ-3.jpg",
+                    Name = "МиГ-3",
+                    Description = "Низкоплан смешанной конструкции. Фюзеляж в передней части сварной из стальных труб с дюралевой обшивкой, хвостовая часть — деревянный монокок, центроплан — дюралевый. Мотор А. А. Микулина АМ-35А взлётной мощностью 1350 лс. Обладал наивысшей в мире скоростью, достигнутой на серийных самолётах и был по манёвренности лучше других истребителей.",
+                    Type ="высотный ночной истребитель",
+                    Produced ="1940 — 1941",
+                    TotalUnits ="3178",
+                    AveragePower ="1350",
+                    AverageSpeed ="640",
+                    LimitHeight ="11500"
                 },
                 new Aviation {                  // #3
                     Image = "",

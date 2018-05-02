@@ -343,6 +343,9 @@
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Resources\И-16.jpg">
       <PackagePath>Resources\И-16.jpg</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Resources\МиГ-3.jpg">
+      <PackagePath>Resources\МиГ-3.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
