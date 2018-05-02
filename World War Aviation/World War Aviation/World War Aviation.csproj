@@ -121,6 +121,7 @@
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Resources\И-16.jpg" />
+    <Content Include="Resources\Ла-5.jpg" />
     <Content Include="Resources\МиГ-3.jpg" />
   </ItemGroup>
   <ItemGroup>

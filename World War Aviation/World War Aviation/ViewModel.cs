@@ -52,15 +52,15 @@ namespace World_War_Aviation
                     LimitHeight ="11500"
                 },
                 new Aviation {                  // #3
-                    Image = "",
-                    Name = "",
-                    Description = "",
-                    Type ="",
-                    Produced ="",
-                    TotalUnits ="",
-                    AveragePower ="",
-                    AverageSpeed ="",
-                    LimitHeight =""
+                    Image = "Resources/Ла-5.jpg",
+                    Name = "Ла-5",
+                    Description = "Одноместный моноплан цельнодеревянной конструкции из дельта-древесины, фюзеляж которого собирался на клею. Применялся двигатель воздушного охлаждения М-82 и его модификации.",
+                    Type ="истребитель",
+                    Produced ="1942 — 1944",
+                    TotalUnits ="9920",
+                    AveragePower ="1700 — 2200",
+                    AverageSpeed ="580 — 685",
+                    LimitHeight ="9500 — 10800"
                 }
             };
             #endregion
