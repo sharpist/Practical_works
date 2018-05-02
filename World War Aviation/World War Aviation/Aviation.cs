@@ -4,6 +4,7 @@ namespace World_War_Aviation
 {
     class Aviation : INotifyPropertyChanged
     {
+        private string image;
         private string name;
         private string description;
         private string type;
@@ -13,6 +14,15 @@ namespace World_War_Aviation
         private string averageSpeed;
         private string limitHeight;
 
+        public string Image
+        {
+            get { return this.image; }
+            set
+            {
+                this.image = value;
+                this.OnPropertyChanged(nameof(Image));
+            }
+        }
         public string Name
         {
             get { return this.name; }

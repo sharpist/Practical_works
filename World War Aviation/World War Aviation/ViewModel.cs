@@ -30,6 +30,7 @@ namespace World_War_Aviation
             #region aviations
             {
                 new Aviation {                  // #1
+                    Image = "Resources/И-16.jpg",
                     Name = "И-16 Поликарпов",
                     Description = "Деревянный низкоплан с небывало коротким фюзеляжем — менее 6 м. Применялся английский двигатель Bristol Jupiter, выпускаемый в СССР как М-22, затем американский Wright R-1820 Cyclone, производившейся по лицензии как М-25, а после доработок получившей марку М-62 и М-63.",
                     Type ="истребитель",
@@ -40,6 +41,7 @@ namespace World_War_Aviation
                     LimitHeight ="7440 — 9800"
                 },
                 new Aviation {                  // #2
+                    Image = "",
                     Name = "",
                     Description = "",
                     Type ="",
@@ -50,6 +52,7 @@ namespace World_War_Aviation
                     LimitHeight =""
                 },
                 new Aviation {                  // #3
+                    Image = "",
                     Name = "",
                     Description = "",
                     Type ="",

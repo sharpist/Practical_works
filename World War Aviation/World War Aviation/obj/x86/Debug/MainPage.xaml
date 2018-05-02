@@ -18,12 +18,16 @@
             <TextBlock Grid.Row="0" Style="{StaticResource HeaderStyleTextBlock}" Text="{Binding Current.Name, Mode=OneWay}"/>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="50*"/>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="40*"/>
                 </Grid.ColumnDefinitions>
                 <!--изображение-->
-                <Image x:ConnectionId='5' Grid.Column="0" x:Name="picture" Stretch="Uniform" Source="image.jpg"/>
+                <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="3">
+                    <Border.Child>
+                        <Image Grid.Column="0" Style="{StaticResource GeneralStyleImage}" Source="{Binding Current.Image, Mode=OneWay}"/>
+                    </Border.Child>
+                </Border>
                 <!--технические характеристики-->
                 <Grid Grid.Column="2">
                     <Grid.RowDefinitions>
@@ -42,9 +46,9 @@
                         <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="8*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="30*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Описание"/>
                     <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Тип"/>
@@ -74,12 +78,16 @@
             <TextBlock Grid.Row="0" Style="{StaticResource HeaderStyleTextBlock}" Text="{Binding Current.Name, Mode=OneWay}"/>
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="50*"/>
                     <RowDefinition Height="1*"/>
-                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="50*"/>
                 </Grid.RowDefinitions>
                 <!--изображение-->
-                <Image x:ConnectionId='4' Grid.Row="0" x:Name="cPicture" Stretch="UniformToFill" Source="image.jpg"/>
+                <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="3">
+                    <Border.Child>
+                        <Image Grid.Row="0" Style="{StaticResource GeneralStyleImage}" Source="{Binding Current.Image, Mode=OneWay}"/>
+                    </Border.Child>
+                </Border>
                 <!--технические характеристики-->
                 <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
@@ -98,9 +106,9 @@
                         <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="8*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="30*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Описание"/>
                     <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource GeneralStyleTextBlock}" Text="Тип"/>
@@ -126,10 +134,10 @@
             <VisualStateGroup>
                 
                 <!--визуальное состояние 1-->
-                <VisualState x:ConnectionId='6' x:Name="TabularLayout">
+                <VisualState x:ConnectionId='4' x:Name="TabularLayout">
                     <!--инициатор-->
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="600"/>
+                        <AdaptiveTrigger MinWindowWidth="720"/>
                     </VisualState.StateTriggers>
                     <!--установщик-->
                     <VisualState.Setters>
@@ -140,7 +148,7 @@
                 </VisualState>
                 
                 <!--визуальное состояние 2-->
-                <VisualState x:ConnectionId='7' x:Name="ColumnarLayout">
+                <VisualState x:ConnectionId='5' x:Name="ColumnarLayout">
                     <!--инициатор-->
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="0"/>
@@ -160,8 +168,8 @@
     <!--панель команд-->
     <Page.TopAppBar>
         <CommandBar Background="Transparent">
-            <AppBarButton x:ConnectionId='8' x:Name="previousAviation" Icon="Previous" Label="Previous" Command="{Binding Path=PreviousAviation}"/>
-            <AppBarButton x:ConnectionId='9' x:Name="nextAviation" Icon="Next" Label="Next" Command="{Binding Path=NextAviation}"/>
+            <AppBarButton x:ConnectionId='6' x:Name="previousAviation" Icon="Previous" Label="Previous" Command="{Binding Path=PreviousAviation}"/>
+            <AppBarButton x:ConnectionId='7' x:Name="nextAviation" Icon="Next" Label="Next" Command="{Binding Path=NextAviation}"/>
         </CommandBar>
     </Page.TopAppBar>
 </Page>

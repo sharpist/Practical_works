@@ -4,16 +4,23 @@
     xmlns:local="using:World_War_Aviation">
 
     <!--фон табличной разметки-->
-    <ImageBrush x:Key="TabularBrush" ImageSource="Images/tabularBack.jpg"/>
+    <ImageBrush x:Key="TabularBrush" ImageSource="AppStyles/tabularBack.jpg"/>
     <Style x:Key="GridStyleTabular" TargetType="Grid">
         <Setter Property="Background" Value="{StaticResource TabularBrush}"/>
     </Style>
     <!--фон столбцовой разметки-->
-    <ImageBrush x:Key="ColumnarBrush" ImageSource="Images/columnarBack.jpg"/>
+    <ImageBrush x:Key="ColumnarBrush" ImageSource="AppStyles/columnarBack.jpg"/>
     <Style x:Key="GridStyleColumnar" TargetType="Grid">
         <Setter Property="Background" Value="{StaticResource ColumnarBrush}"/>
     </Style>
 
+    <!--стиль основной Image-->
+    <Style x:Key="GeneralStyleImage" TargetType="Image">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Stretch" Value="UniformToFill"/>
+    </Style>
+    
     <!--шрифт TextBlock-->
     <Style x:Key="FontStyleTextBlock" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Franklin Gothic Medium"/>
@@ -24,7 +31,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="FontStyle" Value="Normal"/>
-        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontSize" Value="14"/>
     </Style>
     <!--стиль заголовок TextBlock-->
     <Style x:Key="HeaderStyleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource GeneralStyleTextBlock}">
@@ -50,12 +57,13 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="FontStyle" Value="Normal"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontSize" Value="18"/>
         <Setter Property="IsReadOnly" Value="True"/>
-
+        <!--scroll bar-->
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
-        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="DarkGray"/>
     </Style>
 
 </ResourceDictionary>
