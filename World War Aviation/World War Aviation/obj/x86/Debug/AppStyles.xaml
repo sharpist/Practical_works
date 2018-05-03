@@ -18,6 +18,11 @@
     <Style x:Key="GridStyleTabular3" TargetType="Grid">
         <Setter Property="Background" Value="{StaticResource TabularBrush3}"/>
     </Style>
+    <!--фон табличной разметки 4-->
+    <ImageBrush x:Key="TabularBrush4" ImageSource="AppStyles/tabularBack4.jpg"/>
+    <Style x:Key="GridStyleTabular4" TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource TabularBrush4}"/>
+    </Style>
     <!--фон столбцовой разметки-->
     <ImageBrush x:Key="ColumnarBrush" ImageSource="AppStyles/columnarBack.jpg"/>
     <Style x:Key="GridStyleColumnar" TargetType="Grid">

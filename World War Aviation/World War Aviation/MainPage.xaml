@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="40*"/>
                 </Grid.ColumnDefinitions>
                 <!--изображение-->
-                <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="3">
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
                     <Border.Child>
                         <Image Grid.Column="0" Style="{StaticResource ImageStyleGeneral}" Source="{Binding Current.Image, Mode=OneWay}"/>
                     </Border.Child>
@@ -93,7 +93,7 @@
                     <RowDefinition Height="50*"/>
                 </Grid.RowDefinitions>
                 <!--изображение-->
-                <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="3">
+                <Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
                     <Border.Child>
                         <Image Grid.Row="0" Style="{StaticResource ImageStyleGeneral}" Source="{Binding Current.Image, Mode=OneWay}"/>
                     </Border.Child>
@@ -157,7 +157,7 @@
                 <VisualState x:Name="TabularLayout">
                     <!--инициатор-->
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="1000"/>
+                        <AdaptiveTrigger MinWindowWidth="1200"/>
                     </VisualState.StateTriggers>
                     <!--установщик-->
                     <VisualState.Setters>
@@ -171,7 +171,7 @@
                 <VisualState x:Name="TabularLayout2">
                     <!--инициатор-->
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="800"/>
+                        <AdaptiveTrigger MinWindowWidth="1000"/>
                     </VisualState.StateTriggers>
                     <!--установщик-->
                     <VisualState.Setters>
@@ -185,7 +185,7 @@
                 <VisualState x:Name="TabularLayout3">
                     <!--инициатор-->
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="600"/>
+                        <AdaptiveTrigger MinWindowWidth="900"/>
                     </VisualState.StateTriggers>
                     <!--установщик-->
                     <VisualState.Setters>
@@ -196,6 +196,20 @@
                 </VisualState>
 
                 <!--визуальное состояние 4-->
+                <VisualState x:Name="TabularLayout4">
+                    <!--инициатор-->
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="850"/>
+                    </VisualState.StateTriggers>
+                    <!--установщик-->
+                    <VisualState.Setters>
+                        <Setter Target="externalGrid.Style" Value="{StaticResource GridStyleTabular4}"/>
+                        <Setter Target="tabularView.Visibility" Value="Visible"/>
+                        <Setter Target="columnarView.Visibility" Value="Collapsed"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!--визуальное состояние 5-->
                 <VisualState x:Name="ColumnarLayout">
                     <!--инициатор-->
                     <VisualState.StateTriggers>

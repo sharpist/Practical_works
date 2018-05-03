@@ -337,6 +337,9 @@
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\AppStyles\columnarBack.jpg">
       <PackagePath>AppStyles\columnarBack.jpg</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\AppStyles\original.jpg">
+      <PackagePath>AppStyles\original.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\AppStyles\tabularBack.jpg">
       <PackagePath>AppStyles\tabularBack.jpg</PackagePath>
     </AppxPackagedFile>
@@ -345,6 +348,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\AppStyles\tabularBack3.jpg">
       <PackagePath>AppStyles\tabularBack3.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\AppStyles\tabularBack4.jpg">
+      <PackagePath>AppStyles\tabularBack4.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Alexander\Documents\GitHub\Practical_works\World War Aviation\World War Aviation\Resources\И-16.jpg">
       <PackagePath>Resources\И-16.jpg</PackagePath>

@@ -111,9 +111,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppStyles\columnarBack.jpg" />
+    <Content Include="AppStyles\original.jpg" />
     <Content Include="AppStyles\tabularBack.jpg" />
     <Content Include="AppStyles\tabularBack2.jpg" />
     <Content Include="AppStyles\tabularBack3.jpg" />
+    <Content Include="AppStyles\tabularBack4.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
