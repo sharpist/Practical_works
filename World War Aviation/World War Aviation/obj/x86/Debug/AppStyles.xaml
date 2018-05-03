@@ -8,6 +8,16 @@
     <Style x:Key="GridStyleTabular" TargetType="Grid">
         <Setter Property="Background" Value="{StaticResource TabularBrush}"/>
     </Style>
+    <!--фон табличной разметки 2-->
+    <ImageBrush x:Key="TabularBrush2" ImageSource="AppStyles/tabularBack2.jpg"/>
+    <Style x:Key="GridStyleTabular2" TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource TabularBrush2}"/>
+    </Style>
+    <!--фон табличной разметки 3-->
+    <ImageBrush x:Key="TabularBrush3" ImageSource="AppStyles/tabularBack3.jpg"/>
+    <Style x:Key="GridStyleTabular3" TargetType="Grid">
+        <Setter Property="Background" Value="{StaticResource TabularBrush3}"/>
+    </Style>
     <!--фон столбцовой разметки-->
     <ImageBrush x:Key="ColumnarBrush" ImageSource="AppStyles/columnarBack.jpg"/>
     <Style x:Key="GridStyleColumnar" TargetType="Grid">
@@ -15,26 +25,27 @@
     </Style>
 
     <!--стиль основной Image-->
-    <Style x:Key="GeneralStyleImage" TargetType="Image">
+    <Style x:Key="ImageStyleGeneral" TargetType="Image">
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Stretch" Value="UniformToFill"/>
     </Style>
     
     <!--шрифт TextBlock-->
-    <Style x:Key="FontStyleTextBlock" TargetType="TextBlock">
+    <Style x:Key="TextBlockStyleFont" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Franklin Gothic Medium"/>
     </Style>
     <!--стиль основной (составной) TextBlock-->
-    <Style x:Key="GeneralStyleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource FontStyleTextBlock}">
+    <Style x:Key="TextBlockStyleGeneral" TargetType="TextBlock" BasedOn="{StaticResource TextBlockStyleFont}">
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontStyle" Value="Normal"/>
         <Setter Property="FontSize" Value="14"/>
     </Style>
     <!--стиль заголовок TextBlock-->
-    <Style x:Key="HeaderStyleTextBlock" TargetType="TextBlock" BasedOn="{StaticResource GeneralStyleTextBlock}">
+    <Style x:Key="TextBlockStyleHeader" TargetType="TextBlock" BasedOn="{StaticResource TextBlockStyleGeneral}">
         <Setter Property="Foreground" Value="DarkRed"/>
         <Setter Property="FontStyle" Value="Oblique"/>
         <Setter Property="FontSize" Value="30"/>
@@ -48,11 +59,11 @@
     </Style>
 
     <!--шрифт TextBox-->
-    <Style x:Key="FontStyleTextBox" TargetType="TextBox">
+    <Style x:Key="TextBoxStyleFont" TargetType="TextBox">
         <Setter Property="FontFamily" Value="Franklin Gothic Medium"/>
     </Style>
     <!--стиль основной (составной) TextBox-->
-    <Style x:Key="GeneralStyleTextBox" TargetType="TextBox" BasedOn="{StaticResource FontStyleTextBox}">
+    <Style x:Key="TextBoxStyleGeneral" TargetType="TextBox" BasedOn="{StaticResource TextBoxStyleFont}">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
