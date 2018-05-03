@@ -10,5 +10,5 @@ World War Aviation app includes a catalog of the most important Soviet military 
 
 ![screen capture 1](example1.png)
 
-![screen capture 2](example2.png)
+![screen capture 2](example2.gif)
 
